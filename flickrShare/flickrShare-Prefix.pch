@@ -1,0 +1,23 @@
+//
+// Prefix header for all source files of the 'flickrShare' target in the 'flickrShare' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#endif
+
+
+#define kNO_IMAGE_FILENAME      @"no_image.jpg"
+#define kFORCE__SAVE_OVERWRITE  0                   //used during DEBUG to force an overwrite of files in the Docs directory
+#define DEBUG                   1                   //during DEBUG / dev only.  turn off for ship
+
+//Documents Subdirectory structure
+#define kIMAGE_DIRECTORY                @"images"
+#define kTHUMBNAIL_IMAGE_DIRECTORY      @"thumbnails"
