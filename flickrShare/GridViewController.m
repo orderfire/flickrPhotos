@@ -45,13 +45,11 @@
 
     self.navigationItem.leftBarButtonItem  = [[UIBarButtonItem alloc] initWithTitle:@"Back"    style:UIBarButtonItemStylePlain target:self action:@selector(navBack)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"View By" style:UIBarButtonItemStylePlain target:self action:@selector(viewByPressed:)];
-
     self.navigationItem.title = @"My Photos";
-    
+    [[SyncManager sharedInstance] setDelegate:self];
+
     [self initializeData];
     [self checkToggleSelect];
-    [[SyncManager sharedInstance] setDelegate:self];
-    
     
     [self.view setBackgroundColor:[UIColor blackColor]];
   //  [self.collectionView registerNib:@"CustomCollectionCell" forCellWithReuseIdentifier:kCustomCollectionCell];
@@ -97,30 +95,7 @@
 - (BOOL) initializeData
 {
     [self loadImagesFromSyncManager];
-    //[self.items addObject:[[SyncManager sharedInstance] updatedData]];
     [self.sectionTitles addObject:[NSString stringWithString:@"Flickr Photos"]];
-
-/*    //create the list of photos
-    [myPhotos addObject:[NSString stringWithString:@"square.png"]];
-    [myPhotos addObject:[NSString stringWithString:@"square.png"]];
-    [myPhotos addObject:[NSString stringWithString:@"square.png"]];
-    [myPhotos addObject:[NSString stringWithString:@"square.png"]];
-    [myPhotos addObject:[NSString stringWithString:@"square.png"]];
-    [myPhotos addObject:[NSString stringWithString:@"square.png"]];
-    [myPhotos addObject:[NSString stringWithString:@"square.png"]];
-    [self.items addObject:myPhotos];
-    [self.items addObject:myPhotos];
-    [self.items addObject:myPhotos];
-
-    //set titles
-    [self.sectionTitles addObject:[NSString stringWithString:@"My Photos"]];
-    [self.sectionTitles addObject:[NSString stringWithString:@"Shared"]];
-    [self.sectionTitles addObject:[NSString stringWithString:@"Total"]];
-*/
-  //  NSAssert([self.sectionTitles count] == [self.items count], @"Assert. section title # doesn't match # sections in items. \n %i != %i", [self.sectionTitles count], [self.items count]);
-   
- //   NSLog(@"Initialize: %@",    self.items);
- //   NSLog(@"SectionTitles: %@", self.sectionTitles);
 }
 
 

@@ -9,7 +9,7 @@
             <objects>
                 <viewController id="2" customClass="GridViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background_linen.png" translatesAutoresizingMaskIntoConstraints="NO" id="kaJ-xQ-ksB" userLabel="backgroundImage">
@@ -21,7 +21,7 @@
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wzt-UY-6vy">
                                 <color key="backgroundColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="371" id="m9T-IM-BhK"/>
+                                    <constraint firstAttribute="height" constant="382" id="wLe-Cs-h74"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="iIS-Ir-yDK">
                                     <size key="itemSize" width="50" height="50"/>
@@ -73,13 +73,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="cb3-n5-eMi" firstAttribute="centerX" secondItem="wzt-UY-6vy" secondAttribute="centerX" type="default" id="DdQ-rn-YWe"/>
                             <constraint firstItem="wzt-UY-6vy" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="FMi-QP-P4l"/>
-                            <constraint firstItem="cb3-n5-eMi" firstAttribute="leading" secondItem="kaJ-xQ-ksB" secondAttribute="leading" type="default" id="RbF-84-rIg"/>
-                            <constraint firstItem="wzt-UY-6vy" firstAttribute="top" secondItem="3" secondAttribute="top" constant="55" id="Vh7-jS-VYp"/>
-                            <constraint firstItem="wzt-UY-6vy" firstAttribute="trailing" secondItem="kaJ-xQ-ksB" secondAttribute="trailing" type="default" id="ViI-QZ-JjX"/>
+                            <constraint firstItem="kaJ-xQ-ksB" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="I19-wg-6pk"/>
+                            <constraint firstItem="cb3-n5-eMi" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="Wto-ZJ-hSm"/>
+                            <constraint firstItem="wzt-UY-6vy" firstAttribute="bottom" secondItem="cb3-n5-eMi" secondAttribute="top" type="default" id="aQ1-Ug-bTl"/>
                             <constraint firstItem="cb3-n5-eMi" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="bgP-sR-KG3"/>
-                            <constraint firstItem="wzt-UY-6vy" firstAttribute="trailing" secondItem="cb3-n5-eMi" secondAttribute="trailing" type="default" id="pC0-Ok-Gyf"/>
+                            <constraint firstItem="cb3-n5-eMi" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="qEr-qD-wHq"/>
+                            <constraint firstItem="wzt-UY-6vy" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="yKu-xT-dCX"/>
                             <constraint firstItem="kaJ-xQ-ksB" firstAttribute="top" secondItem="3" secondAttribute="top" constant="1" id="z5j-UK-sLU"/>
                         </constraints>
                     </view>
@@ -92,20 +92,6 @@
             </objects>
             <point key="canvasLocation" x="-210" y="19"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="sDa-AA-8MM">
-            <objects>
-                <viewController id="WCX-i3-mZI" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="LgK-2H-cR2">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1yd-c6-gbq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="392" y="23"/>
-        </scene>
     </scenes>
     <resources>
         <image name="background_linen.png" width="320" height="480"/>
@@ -114,6 +100,6 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
 </document>

@@ -31,7 +31,6 @@
 @property (strong, nonatomic) IBOutlet UIImageView *backgroundImage;
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 
-- (BOOL)     initializeData;
 
 - (IBAction) navBack;
 - (IBAction) viewByPressed:(id)sender;
@@ -40,7 +39,8 @@
 - (IBAction) toggleSelect:(id)sender;
 - (BOOL)     checkToggleSelect;
 
--(BOOL) loadImagesFromSyncManager;
+- (BOOL)     initializeData;
+- (BOOL)     loadImagesFromSyncManager;
 
 @end
 
