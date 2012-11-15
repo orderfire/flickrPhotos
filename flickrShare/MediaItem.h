@@ -17,6 +17,8 @@
 @property(nonatomic,strong) NSString *author;
 @property(nonatomic,strong) NSURL    *url;
 @property(nonatomic,strong) NSString *published;
+@property(nonatomic,assign) BOOL          imageDownloaded;
+@property(nonatomic,assign) BOOL          thumbnailSaved;
 
 
 

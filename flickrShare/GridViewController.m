@@ -418,6 +418,9 @@
   
 }
 
+-(void) downloadImageQueueComplete  {
+    NSLog(@"DownloadQueue Completed");
+}
 
 
 

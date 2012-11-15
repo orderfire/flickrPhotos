@@ -21,3 +21,6 @@
 //Documents Subdirectory structure
 #define kIMAGE_DIRECTORY                @"images"
 #define kTHUMBNAIL_IMAGE_DIRECTORY      @"thumbnails"
+
+//Performance
+#define kConcurrentDownloadThreads  5   //can alter to adjust performance
