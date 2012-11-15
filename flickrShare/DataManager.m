@@ -119,6 +119,11 @@ static DataManager *sharedInstance = nil;
 }*/
 
 
+-(NSString*) getDocumentsDirectory  {
+    return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+}
+
+
 -(NSString*) getHDImageSubDirectory  {
     NSString* subdirectory = [NSString stringWithFormat:@"%@",kIMAGE_DIRECTORY];
     return subdirectory;
@@ -334,40 +339,30 @@ static DataManager *sharedInstance = nil;
 }
 
 
-#pragma mark Inventory List
--(BOOL) exportCustomItemList
-{   //creates a plist of the user's custom items (used for import later - so they don't lose their data)
-  /*  NSError* error = nil;
 
-    NSMutableArray * cleanedArray = [[NSMutableArray alloc] initWithCapacity:[array count]];
-    for (Item* item in array)
-    {
-        item.count = [NSNumber numberWithInt:0]; //don't want to export the current count 
-        [cleanedArray addObject:[item dictionaryFromItem]];
+//Move Image Files
+-(UIImage*) getImageFromDocumentsDirectory:(NSString*) filename SubDirectory:(NSString*) subdirectory  {
+    NSString *docsFilePath;
+    if (subdirectory)   {
+        docsFilePath         = [[[DataManager sharedInstance] getDocumentsDirectory] stringByAppendingFormat:@"/%@/%@",subdirectory,filename];
     }
-    if (error) 
-    {
-        NSLog(@"Core Data Failure. Export custom list from core data data failure. Error %@, %@", error, [error userInfo]);
-    }            
-    if([array count] > 0)
-    {   
-        #if *DEBUG
-        NSLog(@"export custom list success");
-        #endif
-        [self saveToPlist: cleanedArray Filename: kCUSTOM_INVENTORY_LIST Path: kEXPORT_DIRECTORY Overwrite: YES];        
-        return YES;
+    else    {
+        docsFilePath         = [[[DataManager sharedInstance] getDocumentsDirectory] stringByAppendingFormat:@"/%@",filename];
     }
-    else 
-    {
-        #if DEBUG
-        NSLog(@"export custom list failure - no items found");
-        #endif
-        return YES;
-    }*/
+    return [self getImageFromPath:docsFilePath];
 }
 
--(NSString*) getDocumentsDirectory  {
-    return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+
+-(UIImage*) getImageFromPath:(NSString*) filePath  {
+    //NSLog(@"%@", filePath);
+    if (![[NSFileManager defaultManager] fileExistsAtPath:filePath])  {
+        return nil;
+    }
+    else  {
+        return [UIImage imageWithContentsOfFile:filePath];
+    }
 }
+
+
 
 @end

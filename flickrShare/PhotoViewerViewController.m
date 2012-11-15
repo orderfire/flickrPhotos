@@ -16,7 +16,6 @@
 
 #import "PhotoViewerViewController.h"
 #import "MediaItem.h"
-#import "UIImage+imageFile.h"
 
 @interface PhotoViewerViewController ()
     -(void) oneFingerSwipeLeftGesture:(UISwipeGestureRecognizer *)recognizer;

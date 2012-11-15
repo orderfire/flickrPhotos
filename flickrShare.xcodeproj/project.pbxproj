@@ -31,8 +31,8 @@
 		AF17F4051654CFA900CF0D7E /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF17F4041654CFA900CF0D7E /* MobileCoreServices.framework */; };
 		AF17F4071654CFB000CF0D7E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AF17F4061654CFB000CF0D7E /* libz.dylib */; };
 		AF17F4091654CFBA00CF0D7E /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF17F4081654CFBA00CF0D7E /* CFNetwork.framework */; };
+		AF4DB7D21654E86D00703531 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF4DB7D11654E86D00703531 /* QuartzCore.framework */; };
 		AF860D1A16547D54004E05D2 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AF860D1916547D54004E05D2 /* DataManager.m */; };
-		AFB04F4316542EC000451D6E /* UIImage+imageFile.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB04F4216542EC000451D6E /* UIImage+imageFile.m */; };
 		AFB04F5A16543A6900451D6E /* background_linen.png in Resources */ = {isa = PBXBuildFile; fileRef = AFB04F5216543A6900451D6E /* background_linen.png */; };
 		AFB04F5B16543A6900451D6E /* background_linen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFB04F5316543A6900451D6E /* background_linen@2x.png */; };
 		AFB04F5C16543A6900451D6E /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AFB04F5516543A6900451D6E /* 1.jpg */; };
@@ -150,10 +150,9 @@
 		AF17F4041654CFA900CF0D7E /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		AF17F4061654CFB000CF0D7E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		AF17F4081654CFBA00CF0D7E /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		AF4DB7D11654E86D00703531 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		AF860D1816547D54004E05D2 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
 		AF860D1916547D54004E05D2 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
-		AFB04F4116542EC000451D6E /* UIImage+imageFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+imageFile.h"; sourceTree = "<group>"; };
-		AFB04F4216542EC000451D6E /* UIImage+imageFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+imageFile.m"; sourceTree = "<group>"; };
 		AFB04F5216543A6900451D6E /* background_linen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background_linen.png; path = resources/background_linen.png; sourceTree = "<group>"; };
 		AFB04F5316543A6900451D6E /* background_linen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background_linen@2x.png"; path = "resources/background_linen@2x.png"; sourceTree = "<group>"; };
 		AFB04F5516543A6900451D6E /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
@@ -183,6 +182,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF4DB7D21654E86D00703531 /* QuartzCore.framework in Frameworks */,
 				AF17F4091654CFBA00CF0D7E /* CFNetwork.framework in Frameworks */,
 				AF17F4071654CFB000CF0D7E /* libz.dylib in Frameworks */,
 				AF17F4051654CFA900CF0D7E /* MobileCoreServices.framework in Frameworks */,
@@ -199,6 +199,7 @@
 		AF116A031654266000F8D45B = {
 			isa = PBXGroup;
 			children = (
+				AF4DB7D11654E86D00703531 /* QuartzCore.framework */,
 				AF17F4081654CFBA00CF0D7E /* CFNetwork.framework */,
 				AF17F4061654CFB000CF0D7E /* libz.dylib */,
 				AF17F4041654CFA900CF0D7E /* MobileCoreServices.framework */,
@@ -253,8 +254,6 @@
 				AF116A3A16542B5F00F8D45B /* PhotoViewerViewController.h */,
 				AF116A3B16542B5F00F8D45B /* PhotoViewerViewController.m */,
 				AF116A3C16542B5F00F8D45B /* PhotoViewerViewController.xib */,
-				AFB04F4116542EC000451D6E /* UIImage+imageFile.h */,
-				AFB04F4216542EC000451D6E /* UIImage+imageFile.m */,
 				AFB04FAB16543DAC00451D6E /* reachability */,
 				AF116A191654266000F8D45B /* Supporting Files */,
 			);
@@ -519,7 +518,6 @@
 				AF116A1F1654266000F8D45B /* main.m in Sources */,
 				AF116A231654266000F8D45B /* _AppDelegate.m in Sources */,
 				AF116A3D16542B5F00F8D45B /* PhotoViewerViewController.m in Sources */,
-				AFB04F4316542EC000451D6E /* UIImage+imageFile.m in Sources */,
 				AFB04F6316543AF300451D6E /* MediaItem.m in Sources */,
 				AFB04F6616543BF000451D6E /* SyncManager.m in Sources */,
 				AFB04FE616543DAC00451D6E /* Reachability.m in Sources */,

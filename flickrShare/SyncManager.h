@@ -22,6 +22,7 @@ typedef enum {
     -(void) syncManagerRequestStarted;
     -(void) syncManagerRequestComplete;
     -(void) syncManagerRequestError;
+    -(void) thumbnailAvailableForItem: (MediaItem*) item;
     -(void) downloadImageQueueComplete;
 @end
 
@@ -47,5 +48,7 @@ typedef enum {
 #pragma mark Download Images Methods
 - (void) downloadImages;
 - (void) downloadURLInBackground:(MediaItem*) item;
++ (BOOL) moveImageFromTempToDocumentsDirectory:(NSString*) filename SubDirectory:(NSString*) subdirectory;
+- (UIImage*) generateThumbnailFromDocumentsImageFile:(NSString*)filename;
 
 @end

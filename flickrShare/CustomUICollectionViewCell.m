@@ -8,7 +8,6 @@
 
 #import "CustomUICollectionViewCell.h"
 #import "DataManager.h"
-#import "UIImage+imageFile.h"
 
 @implementation CustomUICollectionViewCell
 @synthesize imageView;
@@ -35,20 +34,13 @@
     if (_item != item)  {
         _item = item;
     }
-    UIImage* thumbnail = [self getThumbnail:item.fileName];
-    self.imageView.image = thumbnail;
+  //  UIImage* thumbnail = [self getThumbnail:item.fileName];
+  //  self.imageView.image = thumbnail;
     //    self.imageView = [[UIImageView alloc] initWithImage:thumbnail];
 //    self.imageView.opaque = YES;
 }
 
 
--(UIImage*) getThumbnail:(NSString*) filename  {
-    UIImage* thumbnail = [UIImage getImageFromDocuments:filename Directory:[[DataManager sharedInstance] getFullThumbnailImageDirectory]];
-    if (!thumbnail)  {   //the original image wasn't found - display an "Not found" thumbnail
-        thumbnail = [UIImage imageNamed:kNO_IMAGE_FILENAME];
-    }
-    return thumbnail;
-}
 
 
 

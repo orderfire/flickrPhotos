@@ -22,6 +22,10 @@
 
 
 
-+(MediaItem*) createWithItem:(SMXMLElement*) element;
++(MediaItem*)   createWithItem:(SMXMLElement*) element;
+-(UIImage*)     getThumbnail:   (NSString*) filename;
+-(BOOL)         saveThumbnailToDocumentsDirectory;
+-(BOOL)         saveFullImageToDocumentsDirectory;
+
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "MediaItem.h"
+#import "DataManager.h"
 
 @implementation MediaItem
 @synthesize thumbnail;
@@ -32,8 +33,19 @@
     //extract the filename form the URL
     NSArray *filePathComponents = [[item.url absoluteString] pathComponents];
     item.fileName = [filePathComponents objectAtIndex:[filePathComponents count]-1];
-    NSLog(@"Filename: %@", item.fileName);
+  //  NSLog(@"Filename: %@", item.fileName);
     return item;
+}
+
+
+-(BOOL)         saveThumbnailToDocumentsDirectory   {
+
+    
+}
+
+
+-(BOOL)         saveFullImageToDocumentsDirectory   {
+    
 }
 
 

@@ -422,6 +422,11 @@
     NSLog(@"DownloadQueue Completed");
 }
 
+-(void) thumbnailAvailableForItem:(MediaItem *)item {
+    NSLog(@"Thumbnail Available:   %@", [NSDate date]);
+    //REFACTOR - display thumbnail
+    
+}
 
 
 @end

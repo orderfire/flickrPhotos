@@ -14,9 +14,14 @@
 #endif
 
 
-#define kNO_IMAGE_FILENAME      @"no_image.jpg"
+//DEVELOPMENT PARAMETERS
 #define kFORCE__SAVE_OVERWRITE  0                   //used during DEBUG to force an overwrite of files in the Docs directory
 #define DEBUG                   1                   //during DEBUG / dev only.  turn off for ship
+
+
+//CONSTANTS
+#define kNO_IMAGE_FILENAME      @"no_image.jpg"
+#define kTHUMBNAIL_SIZE         50
 
 //Documents Subdirectory structure
 #define kIMAGE_DIRECTORY                @"images"
