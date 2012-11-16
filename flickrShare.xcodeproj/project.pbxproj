@@ -16,8 +16,6 @@
 		AF116A251654266000F8D45B /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = AF116A241654266000F8D45B /* Default.png */; };
 		AF116A271654266000F8D45B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF116A261654266000F8D45B /* Default@2x.png */; };
 		AF116A291654266000F8D45B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF116A281654266000F8D45B /* Default-568h@2x.png */; };
-		AF116A2C1654266000F8D45B /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF116A2A1654266000F8D45B /* MainStoryboard_iPhone.storyboard */; };
-		AF116A2F1654266000F8D45B /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF116A2D1654266000F8D45B /* MainStoryboard_iPad.storyboard */; };
 		AF116A3D16542B5F00F8D45B /* PhotoViewerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF116A3B16542B5F00F8D45B /* PhotoViewerViewController.m */; };
 		AF116A3E16542B5F00F8D45B /* PhotoViewerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF116A3C16542B5F00F8D45B /* PhotoViewerViewController.xib */; };
 		AF17F3DE1654CF5700CF0D7E /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = AF17F38D1654CF5700CF0D7E /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -31,8 +29,11 @@
 		AF17F4051654CFA900CF0D7E /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF17F4041654CFA900CF0D7E /* MobileCoreServices.framework */; };
 		AF17F4071654CFB000CF0D7E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AF17F4061654CFB000CF0D7E /* libz.dylib */; };
 		AF17F4091654CFBA00CF0D7E /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF17F4081654CFBA00CF0D7E /* CFNetwork.framework */; };
+		AF4B49D21655A4240000C8AA /* CollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AF4B49CD1655A4240000C8AA /* CollectionCell.m */; };
+		AF4B49D41655A4240000C8AA /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF4B49D01655A4240000C8AA /* MainStoryboard.storyboard */; };
 		AF4DB7D21654E86D00703531 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF4DB7D11654E86D00703531 /* QuartzCore.framework */; };
 		AF860D1A16547D54004E05D2 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AF860D1916547D54004E05D2 /* DataManager.m */; };
+		AF9967921655C1070051B476 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF9967911655C1070051B476 /* CollectionViewController.m */; };
 		AFB04F5A16543A6900451D6E /* background_linen.png in Resources */ = {isa = PBXBuildFile; fileRef = AFB04F5216543A6900451D6E /* background_linen.png */; };
 		AFB04F5B16543A6900451D6E /* background_linen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFB04F5316543A6900451D6E /* background_linen@2x.png */; };
 		AFB04F5C16543A6900451D6E /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AFB04F5516543A6900451D6E /* 1.jpg */; };
@@ -43,11 +44,9 @@
 		AFB04F6316543AF300451D6E /* MediaItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB04F6216543AF300451D6E /* MediaItem.m */; };
 		AFB04F6616543BF000451D6E /* SyncManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB04F6516543BEF00451D6E /* SyncManager.m */; };
 		AFB04FE616543DAC00451D6E /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB04FCE16543DAC00451D6E /* Reachability.m */; };
-		AFB04FFC165441D100451D6E /* GridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB04FFA165441CF00451D6E /* GridViewController.m */; };
 		AFB050D3165446CB00451D6E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFB04FF716543F5900451D6E /* SystemConfiguration.framework */; };
 		AFB051BA1654532200451D6E /* SMWebRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB051B91654532200451D6E /* SMWebRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AFB051BD1654579400451D6E /* SMXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB051BC1654579300451D6E /* SMXMLDocument.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		AFE84E2A16548FCA000AA1C4 /* CustomUICollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE84E2916548FCA000AA1C4 /* CustomUICollectionViewCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,8 +63,6 @@
 		AF116A241654266000F8D45B /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		AF116A261654266000F8D45B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		AF116A281654266000F8D45B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		AF116A2B1654266000F8D45B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		AF116A2E1654266000F8D45B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		AF116A3A16542B5F00F8D45B /* PhotoViewerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoViewerViewController.h; sourceTree = "<group>"; };
 		AF116A3B16542B5F00F8D45B /* PhotoViewerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoViewerViewController.m; sourceTree = "<group>"; };
 		AF116A3C16542B5F00F8D45B /* PhotoViewerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoViewerViewController.xib; sourceTree = "<group>"; };
@@ -150,9 +147,16 @@
 		AF17F4041654CFA900CF0D7E /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		AF17F4061654CFB000CF0D7E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		AF17F4081654CFBA00CF0D7E /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		AF384F221655ABB5008D4144 /* CollectionViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController1.m; sourceTree = SOURCE_ROOT; };
+		AF384F241655ABEC008D4144 /* CollectionViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewController1.h; sourceTree = SOURCE_ROOT; };
+		AF4B49CC1655A4240000C8AA /* CollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionCell.h; sourceTree = SOURCE_ROOT; };
+		AF4B49CD1655A4240000C8AA /* CollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionCell.m; sourceTree = SOURCE_ROOT; };
+		AF4B49D11655A4240000C8AA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		AF4DB7D11654E86D00703531 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		AF860D1816547D54004E05D2 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
 		AF860D1916547D54004E05D2 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
+		AF9967901655C1070051B476 /* CollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = SOURCE_ROOT; };
+		AF9967911655C1070051B476 /* CollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = SOURCE_ROOT; };
 		AFB04F5216543A6900451D6E /* background_linen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background_linen.png; path = resources/background_linen.png; sourceTree = "<group>"; };
 		AFB04F5316543A6900451D6E /* background_linen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background_linen@2x.png"; path = "resources/background_linen@2x.png"; sourceTree = "<group>"; };
 		AFB04F5516543A6900451D6E /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
@@ -167,14 +171,10 @@
 		AFB04FCD16543DAC00451D6E /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		AFB04FCE16543DAC00451D6E /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		AFB04FF716543F5900451D6E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		AFB04FF9165441CF00451D6E /* GridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridViewController.h; sourceTree = "<group>"; };
-		AFB04FFA165441CF00451D6E /* GridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GridViewController.m; sourceTree = "<group>"; };
 		AFB051B81654532200451D6E /* SMWebRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMWebRequest.h; sourceTree = "<group>"; };
 		AFB051B91654532200451D6E /* SMWebRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMWebRequest.m; sourceTree = "<group>"; };
 		AFB051BB1654579200451D6E /* SMXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMXMLDocument.h; sourceTree = "<group>"; };
 		AFB051BC1654579300451D6E /* SMXMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMXMLDocument.m; sourceTree = "<group>"; };
-		AFE84E2816548FCA000AA1C4 /* CustomUICollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomUICollectionViewCell.h; sourceTree = "<group>"; };
-		AFE84E2916548FCA000AA1C4 /* CustomUICollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomUICollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,10 +235,13 @@
 				AFB04F51165439C000451D6E /* resources */,
 				AF116A211654266000F8D45B /* _AppDelegate.h */,
 				AF116A221654266000F8D45B /* _AppDelegate.m */,
-				AFB04FF9165441CF00451D6E /* GridViewController.h */,
-				AFB04FFA165441CF00451D6E /* GridViewController.m */,
-				AFE84E2816548FCA000AA1C4 /* CustomUICollectionViewCell.h */,
-				AFE84E2916548FCA000AA1C4 /* CustomUICollectionViewCell.m */,
+				AF4B49CC1655A4240000C8AA /* CollectionCell.h */,
+				AF4B49CD1655A4240000C8AA /* CollectionCell.m */,
+				AF9967901655C1070051B476 /* CollectionViewController.h */,
+				AF9967911655C1070051B476 /* CollectionViewController.m */,
+				AF384F241655ABEC008D4144 /* CollectionViewController1.h */,
+				AF384F221655ABB5008D4144 /* CollectionViewController1.m */,
+				AF4B49D01655A4240000C8AA /* MainStoryboard.storyboard */,
 				AFB051B81654532200451D6E /* SMWebRequest.h */,
 				AFB051B91654532200451D6E /* SMWebRequest.m */,
 				AFB051BB1654579200451D6E /* SMXMLDocument.h */,
@@ -249,8 +252,6 @@
 				AFB04F6516543BEF00451D6E /* SyncManager.m */,
 				AFB04F6116543AF300451D6E /* MediaItem.h */,
 				AFB04F6216543AF300451D6E /* MediaItem.m */,
-				AF116A2A1654266000F8D45B /* MainStoryboard_iPhone.storyboard */,
-				AF116A2D1654266000F8D45B /* MainStoryboard_iPad.storyboard */,
 				AF116A3A16542B5F00F8D45B /* PhotoViewerViewController.h */,
 				AF116A3B16542B5F00F8D45B /* PhotoViewerViewController.m */,
 				AF116A3C16542B5F00F8D45B /* PhotoViewerViewController.xib */,
@@ -495,8 +496,6 @@
 				AF116A251654266000F8D45B /* Default.png in Resources */,
 				AF116A271654266000F8D45B /* Default@2x.png in Resources */,
 				AF116A291654266000F8D45B /* Default-568h@2x.png in Resources */,
-				AF116A2C1654266000F8D45B /* MainStoryboard_iPhone.storyboard in Resources */,
-				AF116A2F1654266000F8D45B /* MainStoryboard_iPad.storyboard in Resources */,
 				AF116A3E16542B5F00F8D45B /* PhotoViewerViewController.xib in Resources */,
 				AFB04F5A16543A6900451D6E /* background_linen.png in Resources */,
 				AFB04F5B16543A6900451D6E /* background_linen@2x.png in Resources */,
@@ -505,6 +504,7 @@
 				AFB04F5E16543A6900451D6E /* 3.jpg in Resources */,
 				AFB04F5F16543A6900451D6E /* no_image.jpg in Resources */,
 				AFB04F6016543A6900451D6E /* 5.jpg in Resources */,
+				AF4B49D41655A4240000C8AA /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,11 +521,9 @@
 				AFB04F6316543AF300451D6E /* MediaItem.m in Sources */,
 				AFB04F6616543BF000451D6E /* SyncManager.m in Sources */,
 				AFB04FE616543DAC00451D6E /* Reachability.m in Sources */,
-				AFB04FFC165441D100451D6E /* GridViewController.m in Sources */,
 				AFB051BA1654532200451D6E /* SMWebRequest.m in Sources */,
 				AFB051BD1654579400451D6E /* SMXMLDocument.m in Sources */,
 				AF860D1A16547D54004E05D2 /* DataManager.m in Sources */,
-				AFE84E2A16548FCA000AA1C4 /* CustomUICollectionViewCell.m in Sources */,
 				AF17F3DE1654CF5700CF0D7E /* ASIAuthenticationDialog.m in Sources */,
 				AF17F3DF1654CF5700CF0D7E /* ASIDataCompressor.m in Sources */,
 				AF17F3E01654CF5700CF0D7E /* ASIDataDecompressor.m in Sources */,
@@ -534,6 +532,8 @@
 				AF17F3E31654CF5700CF0D7E /* ASIHTTPRequest.m in Sources */,
 				AF17F3E41654CF5700CF0D7E /* ASIInputStream.m in Sources */,
 				AF17F3E51654CF5700CF0D7E /* ASINetworkQueue.m in Sources */,
+				AF4B49D21655A4240000C8AA /* CollectionCell.m in Sources */,
+				AF9967921655C1070051B476 /* CollectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,20 +548,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		AF116A2A1654266000F8D45B /* MainStoryboard_iPhone.storyboard */ = {
+		AF4B49D01655A4240000C8AA /* MainStoryboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				AF116A2B1654266000F8D45B /* en */,
+				AF4B49D11655A4240000C8AA /* en */,
 			);
-			name = MainStoryboard_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		AF116A2D1654266000F8D45B /* MainStoryboard_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AF116A2E1654266000F8D45B /* en */,
-			);
-			name = MainStoryboard_iPad.storyboard;
+			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

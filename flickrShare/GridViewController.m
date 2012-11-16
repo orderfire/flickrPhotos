@@ -9,9 +9,7 @@
 #import "GridViewController.h"
 #import "MediaItem.h"
 #import "DataManager.h"
-#import "CustomUICollectionViewCell.h"
-
-#define kCollectionReuseIdentifier @"CustomCell"
+#import "CustomCollectionCell.h"
 
 @interface GridViewController ()
 
@@ -52,8 +50,7 @@
     [self checkToggleSelect];
     
     [self.view setBackgroundColor:[UIColor blackColor]];
-  //  [self.collectionView registerNib:@"CustomCollectionCell" forCellWithReuseIdentifier:kCustomCollectionCell];
-    [self.collectionView registerClass:[CustomUICollectionViewCell class] forCellWithReuseIdentifier:kCollectionReuseIdentifier];
+    [self.collectionView registerClass:[CustomCollectionCell class] forCellWithReuseIdentifier:@"ReuseId"];
 }
 
 
@@ -102,7 +99,7 @@
 -(BOOL) loadImagesFromSyncManager   {
     NSMutableArray* syncManagerItems = [NSMutableArray arrayWithArray:[[SyncManager sharedInstance] responseArray]];
     if ([syncManagerItems count] > 0)  {
-        for (id syncItem in syncManagerItems) {
+        for (MediaItem* syncItem in syncManagerItems) {
             if (![self.items containsObject:(MediaItem*)syncItem])   {
                 //it's a new photo! Copy it into the view controller's list of photos
                 [self.items addObject:syncItem];
@@ -333,11 +330,11 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    CustomUICollectionViewCell *cell = [cv dequeueReusableCellWithReuseIdentifier:kCollectionReuseIdentifier forIndexPath:indexPath];
+    CustomCollectionCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"ReuseId" forIndexPath:indexPath];
     MediaItem* item = [self.items objectAtIndex:indexPath.row];
     cell.item = item;
-    //cell.backgroundColor = [UIColor blueColor];
-    cell.imageView.backgroundColor = [UIColor brownColor];
+    cell.collectionImageView.image = [UIImage imageNamed:@"no_image.jpg"];
+    [cell refreshThumbnail];
     return cell;
 }
 
@@ -399,8 +396,12 @@
 
 -(void) thumbnailAvailableForItem:(MediaItem *)item {
     NSLog(@"Thumbnail Available:   %@", [NSDate date]);
-    //REFACTOR - display thumbnail
-    
+    if ([self.items containsObject:item])
+    {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[self.items indexOfObject:item] inSection:0];
+        NSLog(@"      Index: %@", indexPath);
+        [self.collectionView reloadItemsAtIndexPaths:[NSArray arrayWithObject:indexPath]];
+    }
 }
 
 

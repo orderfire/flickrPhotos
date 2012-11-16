@@ -7,10 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PhotoViewerViewController.h"
-#import "SyncManager.h"
 
-@interface GridViewController : UIViewController <  UICollectionViewDataSource,
+@interface GridViewController : UICollectionViewController <  UICollectionViewDataSource,
                                                     UICollectionViewDelegate,
                                                     UICollectionViewDelegateFlowLayout,
                                                     UIActionSheetDelegate,
@@ -29,7 +27,6 @@
 @property (strong, nonatomic) NSMutableArray * sectionTitles;
 @property (strong, nonatomic) UILongPressGestureRecognizer* longTapGesture;
 @property (strong, nonatomic) IBOutlet UIImageView *backgroundImage;
-@property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 
 
 - (IBAction) navBack;
