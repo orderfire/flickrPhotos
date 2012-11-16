@@ -661,6 +661,7 @@
 				INFOPLIST_FILE = "flickrShare/flickrShare-Info.plist";
 				"OTHER_CFLAGS[arch=*]" = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -673,6 +674,7 @@
 				HEADER_SEARCH_PATHS = KKGridView;
 				INFOPLIST_FILE = "flickrShare/flickrShare-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
