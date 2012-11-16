@@ -20,12 +20,12 @@
 @property (strong, nonatomic) IBOutlet UIView *transparentView;
 @property (strong, nonatomic) IBOutlet UIImageView *image;
 @property (strong, nonatomic) IBOutlet UIImageView *backgroundImage;
-@property (strong, nonatomic) IBOutlet UIBarButtonItem *prevButton;
-@property (strong, nonatomic) IBOutlet UIBarButtonItem *nextButton;
+@property (strong, nonatomic) IBOutlet UIButton *prevButton;
+@property (strong, nonatomic) IBOutlet UIButton *nextButton;
 @property (strong, nonatomic) IBOutlet UIToolbar *toolbar;
 @property (strong, nonatomic)          NSMutableArray* photoArray;
 @property (readwrite, nonatomic)       NSUInteger selectedIndex;
-
+@property (nonatomic, strong)          NSDate* lastTouchDate;
 @property (nonatomic, strong) UISwipeGestureRecognizer* oneFingerSwipeRightGesture;
 @property (nonatomic, strong) UISwipeGestureRecognizer* oneFingerSwipeLeftGesture;
 @property (nonatomic, strong) UILongPressGestureRecognizer *longTapGesture;
@@ -42,4 +42,6 @@
 -(void) setupGestureRecognizers;
 -(void) removeGestureRecognizers;
 -(void) fadeTransparentView;
+-(BOOL) checkDateFromLastTouch: (NSTimeInterval) seconds;
+
 @end

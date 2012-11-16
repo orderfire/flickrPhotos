@@ -10,12 +10,14 @@
 #define kLOAD_MIDDLE 1
 #define kLOAD_RIGHT  2
 #define kTRANSPARENT_VIEW_ALPHA 0.8
-#define kTRANSPARENT_VIEW_FADEIN_DELAY  0.7
-#define kTRANSPARENT_VIEW_DELAY 5
-#define kTRANSPARENT_VIEW_FADEOUT_DELAY 2
+#define kTRANSPARENT_VIEW_FADEIN_DELAY  0.2
+#define kTRANSPARENT_VIEW_DELAY 3
+#define kTRANSPARENT_VIEW_FADEOUT_DELAY 1
 
 #import "PhotoViewerViewController.h"
 #import "MediaItem.h"
+#import "DataManager.h"
+#import <Foundation/Foundation.h>
 
 @interface PhotoViewerViewController ()
     -(void) oneFingerSwipeLeftGesture:(UISwipeGestureRecognizer *)recognizer;
@@ -38,6 +40,8 @@
 @synthesize oneFingerSwipeRightGesture = _oneFingerSwipeRightGesture;
 @synthesize longTapGesture = _longTapGesture;
 @synthesize twoFingerTapGesture = _twoFingerTapGesture;
+@synthesize lastTouchDate = _nextTouchDate;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -91,10 +95,10 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+
 #pragma mark USER ACTIONS
 -(IBAction) navBack
 {
-    NSLog(@"Nav back button pressed");
     [self dismissModalViewControllerAnimated:YES];
 }
 
@@ -132,7 +136,7 @@
 
 -(UIImage*) loadImage {
     MediaItem* item = [self.photoArray objectAtIndex:self.selectedIndex];
-    return item.thumbnail;
+    return [item getFullImage];
 }
 
 
@@ -179,32 +183,43 @@
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
 {
-//    CGPoint initialGesturePoint = [touch locationInView:self.view];
-    [UIView transitionWithView:self.view 
-                      duration:kTRANSPARENT_VIEW_FADEIN_DELAY 
-                       options:UIViewAnimationCurveEaseIn 
-                    animations:^{
-        self.transparentView.alpha = kTRANSPARENT_VIEW_ALPHA;
-    }   
-                    completion:^(BOOL completion)  {
-                        [self performSelector:@selector(fadeTransparentView) 
-                                   withObject:nil 
-                                   afterDelay:kTRANSPARENT_VIEW_DELAY];
-    }];
+    self.lastTouchDate = [NSDate date];
+    if (self.transparentView.alpha == 0)     {
+        [UIView transitionWithView:self.view
+                          duration:kTRANSPARENT_VIEW_FADEIN_DELAY
+                           options:UIViewAnimationCurveEaseIn
+                        animations:^{
+                            self.transparentView.alpha = kTRANSPARENT_VIEW_ALPHA;
+                        }
+                        completion:^(BOOL completion)  {
+                            [self performSelector:@selector(fadeTransparentView)
+                                       withObject:nil
+                                       afterDelay:kTRANSPARENT_VIEW_DELAY];
+                        }];
+        
+    }
+    else    {
+        [self performSelector:@selector(fadeTransparentView)
+                   withObject:nil
+                   afterDelay:kTRANSPARENT_VIEW_DELAY];
+    }
     return TRUE;
 }
 
 
 -(void) fadeTransparentView {
-    //fades out the overlay controls
-    [UIView transitionWithView:self.view 
-                      duration:kTRANSPARENT_VIEW_FADEOUT_DELAY 
-                       options:UIViewAnimationCurveEaseIn 
-                    animations:^{
-        self.transparentView.alpha = 0;
-    }   
-                    completion:^(BOOL completion)  {
-                    }];
+    NSDate* checkDate = [self.lastTouchDate dateByAddingTimeInterval:kTRANSPARENT_VIEW_DELAY];
+    if ([checkDate compare:[NSDate date]] == NSOrderedAscending)    {
+        //fades out the overlay controls
+        [UIView transitionWithView:self.view
+                          duration:kTRANSPARENT_VIEW_FADEOUT_DELAY
+                           options:UIViewAnimationCurveEaseIn
+                        animations:^{
+                            self.transparentView.alpha = 0;
+                        }
+                        completion:^(BOOL completion)  {
+                        }];
+    }
 }
 
 

@@ -38,16 +38,18 @@
 }
 
 
--(BOOL)         saveThumbnailToDocumentsDirectory   {
+-(UIImage*) getThumbnailImage   {
+    return [[DataManager sharedInstance] getImageFromDocumentsDirectory:self.fileName SubDirectory:kTHUMBNAIL_IMAGE_DIRECTORY];
 
-    
 }
 
 
--(BOOL)         saveFullImageToDocumentsDirectory   {
-    
+-(UIImage*) getFullImage        {
+    if (!self.fullImage)  {
+        self.fullImage = [[DataManager sharedInstance] getImageFromDocumentsDirectory:self.fileName SubDirectory:kIMAGE_DIRECTORY];
+    }
+    return self.fullImage;
 }
-
 
 
 @end

@@ -20,12 +20,9 @@
 @property(nonatomic,assign) BOOL          imageDownloaded;
 @property(nonatomic,assign) BOOL          thumbnailSaved;
 
-
-
 +(MediaItem*)   createWithItem:(SMXMLElement*) element;
--(UIImage*)     getThumbnail:   (NSString*) filename;
--(BOOL)         saveThumbnailToDocumentsDirectory;
--(BOOL)         saveFullImageToDocumentsDirectory;
 
+-(UIImage*) getThumbnailImage;
+-(UIImage*) getFullImage;
 
 @end
