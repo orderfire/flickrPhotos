@@ -98,27 +98,6 @@ static DataManager *sharedInstance = nil;
 }
 
 
-/*-(NSMutableArray*) initializeSampleDataStore:(BOOL)force
-{   // creates a sample dataStore  (empty data, writes over existing user data)
-    [self createDirectoryStructureInDocuments];
-    
-    NSMutableArray* array;
-    #if DEBUG
-    array =  [self importPhotoDataFromPlist:kPHOTO_FILENAME_LIST Path:kDATA_DIRECTORY];
-    #endif
-    
-    #if DEBUG
-  //  NSLog(@"%@", array);
-    for (MediaItem* item in array)
-    {
-        NSString* subdirectory = [NSString stringWithFormat:@"%@/%@",kIMAGE_DIRECTORY,kHD_SIZE];
-        [self copyFileFromBundleToDocuments:item.imageFilename Directory:subdirectory OverWrite:force];        
-    }
-    #endif
-    return array;
-}*/
-
-
 -(NSString*) getDocumentsDirectory  {
     return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
 }
@@ -216,30 +195,6 @@ static DataManager *sharedInstance = nil;
         }
     }
 }
-
-
-/*
-#pragma mark Private Methods
--(NSMutableArray*) importPhotoDataFromPlist: (NSString*) fileName Path: (NSString*) filePath 
-{   //imports photo data from plist
-    NSArray* importArray = [self loadFromPlist:fileName Path:filePath FromBundle:YES];
-    NSMutableArray* dataArray = [[NSMutableArray alloc] init];
-    @autoreleasepool 
-    {
-        int i;
-        for (i=0;i<[importArray count];i++)
-        { 
-            MediaItem* item = [[MediaItem alloc] init];
-            [item createPhotoWithFilename:[importArray objectAtIndex:i]];
-            [dataArray addObject:item];
-        }
-        #if DEBUG
-        NSLog(@"Import photo data plist complete.  #%i",i);
-        #endif
-    }
-    return dataArray;
-}*/
-
 
 
 -(BOOL) saveArrayToPlist: (NSArray *)data FileName: (NSString *)fileName Path: (NSString*) filePath  

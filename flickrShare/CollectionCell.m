@@ -21,14 +21,6 @@
 }
 
 
-/*-(void) setItem:(MediaItem *)item   {
-    //override for setting the media item, will set the thumbnail image
-    if (_item != item)  {
-        _item = item;
-    }
-}*/
-
-
 -(BOOL) refreshThumbnail    {
     
     UIImage* thumbnail = [self.item getThumbnailImage];
