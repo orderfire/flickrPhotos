@@ -30,7 +30,7 @@
     [self resetCollectionGridViewer];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refreshAPI:)];
     self.navigationItem.title = @"Flickr Photos";
-    [self.sectionTitles addObject:[NSString stringWithString:@"Flickr Photos"]];
+    [self.sectionTitles addObject:@"Flickr Photos"];
     [self.collectionView registerClass:[CollectionCell class] forCellWithReuseIdentifier:@"ReuseId"];
     self.collectionView.allowsSelection = YES;
    
@@ -121,7 +121,6 @@
 
 #pragma mark – UICollectionViewDelegateFlowLayout
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    MediaItem* mediaItem = [self.items objectAtIndex:indexPath.row];
     CGSize itemSize = CGSizeMake(50,50);
     itemSize.height += 10;  //spacing - height
     itemSize.width  += 10;  //spacing - width

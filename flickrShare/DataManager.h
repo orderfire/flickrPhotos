@@ -19,7 +19,6 @@
 + (id)sharedInstance;
 - (BOOL) saveToPlist: (NSMutableArray*) saveArray Filename: (NSString*) fileName Path: filePath Overwrite: (BOOL) overwrite;
 - (NSMutableArray* )loadFromPlist: (NSString*) fileName Path: (NSString*) filePath FromBundle:(BOOL) bundle;
-- (NSMutableArray*) initializeSampleDataStore:(BOOL)force;
 
 - (NSString*) getDocumentsDirectory;
 - (NSString*) getHDImageSubDirectory;
@@ -33,7 +32,6 @@
 - (void) copyFileFromBundleToDocuments:(NSString*)filename Directory:(NSString*)subdirectoryString OverWrite:(BOOL) overwrite;
 - (BOOL) verifySampleDataStore;
 
-- (NSMutableArray*) importPhotoDataFromPlist: (NSString*) fileName Path: (NSString*) filePath;
 
 -(UIImage*) getImageFromDocumentsDirectory:(NSString*) filename SubDirectory:(NSString*) subdirectory;
 -(UIImage*) getImageFromPath:(NSString*) filePath;

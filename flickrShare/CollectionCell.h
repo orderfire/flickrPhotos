@@ -12,6 +12,6 @@
 @property (weak, nonatomic)     IBOutlet UIImageView *collectionImageView;
 @property (nonatomic, strong)   MediaItem*            item;
 
--(BOOL) refreshThumbnail;
+-(void) refreshThumbnail;
 
 @end

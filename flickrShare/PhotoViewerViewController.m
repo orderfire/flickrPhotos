@@ -69,7 +69,6 @@
     [self setNextButton:nil];
     [self setToolbar:nil];
     [self setPhotoArray:nil];
-    [self setSelectedIndex:nil];
     [super viewDidUnload];
 }
 

@@ -21,7 +21,7 @@
 }
 
 
--(BOOL) refreshThumbnail    {
+-(void) refreshThumbnail    {
     
     UIImage* thumbnail = [self.item getThumbnailImage];
     if (!thumbnail)    {

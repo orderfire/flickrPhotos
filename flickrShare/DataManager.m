@@ -191,7 +191,7 @@ static DataManager *sharedInstance = nil;
         }
         if (error)
         {
-            NSLog(@"Could not copy image file from bundle. %@", error, [error userInfo]);
+        //    NSLog(@"Could not copy image file from bundle. %@", error, [error userInfo]);
         }
     }
 }
