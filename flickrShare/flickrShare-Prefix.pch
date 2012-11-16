@@ -28,4 +28,4 @@
 #define kTHUMBNAIL_IMAGE_DIRECTORY      @"thumbnails"
 
 //Performance
-#define kConcurrentDownloadThreads  5   //can alter to adjust performance
+#define kConcurrentDownloadThreads  3   //can alter to adjust performance

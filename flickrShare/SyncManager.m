@@ -160,7 +160,7 @@ static SyncManager *sharedInstance = nil;
         //file was moved.   create a thumbnail from full-size
         
         //do on a background thread using GCD (dispatch async) for performance
-        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
         dispatch_async(queue, ^{
             
             MediaItem* item = [self getItemWithFilename:filename];
