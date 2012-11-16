@@ -13,6 +13,7 @@
 #define kTRANSPARENT_VIEW_FADEIN_DELAY  0.2
 #define kTRANSPARENT_VIEW_DELAY 3
 #define kTRANSPARENT_VIEW_FADEOUT_DELAY 1
+#define kANIMATE_IMAGE_SWITCH_DURATION 0.5
 
 #import "PhotoViewerViewController.h"
 #import "MediaItem.h"
@@ -29,7 +30,7 @@
 @implementation PhotoViewerViewController
 @synthesize delegate;
 @synthesize transparentView;
-@synthesize image;
+@synthesize fullImageView;
 @synthesize backgroundImage;
 @synthesize prevButton;
 @synthesize nextButton;
@@ -57,6 +58,7 @@
 {
     [super viewDidLoad];
     self.navigationItem.leftBarButtonItem  = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(navBack)];
+  //  [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"header_bar_dark_grey.png"] forBarMetrics:UIBarMetricsDefault];
 }
 
 - (void)viewDidUnload
@@ -75,7 +77,7 @@
 {
     [self setupGestureRecognizers];
     self.transparentView.alpha = 0;
-    self.image.image = [self loadImage];
+    self.fullImageView.image = [self loadImage];
 }
 
 
@@ -123,20 +125,50 @@
 -(IBAction) reloadImage:(int) direction
 {
     if (direction == kLOAD_LEFT)  {
-        self.image.image = [self loadImage];         
+        [UIView animateWithDuration:kANIMATE_IMAGE_SWITCH_DURATION
+                              delay:0
+                            options:UIViewAnimationOptionTransitionFlipFromLeft
+                         animations:^(void) {
+                                    self.fullImageView.image = [self loadImage];
+                                    }
+                         completion:^(BOOL finished) {
+                         }];
     }
     else if (direction == kLOAD_RIGHT)  {
-        self.image.image = [self loadImage];         
+        [UIView animateWithDuration:kANIMATE_IMAGE_SWITCH_DURATION
+                              delay:0
+                            options:UIViewAnimationOptionTransitionFlipFromRight
+                         animations:^(void) {
+                             self.fullImageView.image = [self loadImage];
+                         }
+                         completion:^(BOOL finished) {
+                         }];
     }
     else {  //load kLOAD_MIDDLE
-        self.image.image = [self loadImage];          
-    }
+        [UIView animateWithDuration:kANIMATE_IMAGE_SWITCH_DURATION
+                              delay:0
+                            options:UIViewAnimationOptionTransitionFlipFromLeft
+                         animations:^(void) {
+                             self.fullImageView.image = [self loadImage];
+                         }
+                         completion:^(BOOL finished) {
+                         }];    }
+    
     NSLog(@"Index:%i",self.selectedIndex);
 }
 
 -(UIImage*) loadImage {
     MediaItem* item = [self.photoArray objectAtIndex:self.selectedIndex];
-    return [item getFullImage];
+    UIImage* newImage = [item getFullImage];
+    
+    if ((newImage.size.height > self.fullImageView.frame.size.height) || (newImage.size.width > self.fullImageView.frame.size.width))   {
+    //if the newImage is bigger than the window, have the imageView resize the image to fit
+        self.fullImageView.contentMode = UIViewContentModeScaleAspectFit;
+    }
+    else    {
+        self.fullImageView.contentMode = UIViewContentModeCenter;
+    }
+    return newImage;
 }
 
 

@@ -199,10 +199,10 @@
 		AFB04FCD16543DAC00451D6E /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		AFB04FCE16543DAC00451D6E /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		AFB04FF716543F5900451D6E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		AFB051B81654532200451D6E /* SMWebRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMWebRequest.h; sourceTree = "<group>"; };
-		AFB051B91654532200451D6E /* SMWebRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMWebRequest.m; sourceTree = "<group>"; };
-		AFB051BB1654579200451D6E /* SMXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMXMLDocument.h; sourceTree = "<group>"; };
-		AFB051BC1654579300451D6E /* SMXMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMXMLDocument.m; sourceTree = "<group>"; };
+		AFB051B81654532200451D6E /* SMWebRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMWebRequest.h; path = ../SMWebRequest.h; sourceTree = "<group>"; };
+		AFB051B91654532200451D6E /* SMWebRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMWebRequest.m; path = ../SMWebRequest.m; sourceTree = "<group>"; };
+		AFB051BB1654579200451D6E /* SMXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMXMLDocument.h; path = ../SMXMLDocument.h; sourceTree = "<group>"; };
+		AFB051BC1654579300451D6E /* SMXMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMXMLDocument.m; path = ../SMXMLDocument.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,10 +227,6 @@
 		AF116A031654266000F8D45B = {
 			isa = PBXGroup;
 			children = (
-				AF4DB7D11654E86D00703531 /* QuartzCore.framework */,
-				AF17F4081654CFBA00CF0D7E /* CFNetwork.framework */,
-				AF17F4061654CFB000CF0D7E /* libz.dylib */,
-				AF17F4041654CFA900CF0D7E /* MobileCoreServices.framework */,
 				AF116A181654266000F8D45B /* flickrShare */,
 				AF116A111654266000F8D45B /* Frameworks */,
 				AF116A0F1654266000F8D45B /* Products */,
@@ -248,6 +244,10 @@
 		AF116A111654266000F8D45B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AF17F4061654CFB000CF0D7E /* libz.dylib */,
+				AF4DB7D11654E86D00703531 /* QuartzCore.framework */,
+				AF17F4081654CFBA00CF0D7E /* CFNetwork.framework */,
+				AF17F4041654CFA900CF0D7E /* MobileCoreServices.framework */,
 				AFB04FF716543F5900451D6E /* SystemConfiguration.framework */,
 				AF116A121654266000F8D45B /* UIKit.framework */,
 				AF116A141654266000F8D45B /* Foundation.framework */,
@@ -259,29 +259,18 @@
 		AF116A181654266000F8D45B /* flickrShare */ = {
 			isa = PBXGroup;
 			children = (
+				AFD4C4391655FDF0005F80D8 /* Views&Controllers */,
 				AF17F3891654CF5700CF0D7E /* 3rd Party Frameworks */,
 				AFB04F51165439C000451D6E /* resources */,
 				AF116A211654266000F8D45B /* _AppDelegate.h */,
 				AF116A221654266000F8D45B /* _AppDelegate.m */,
-				AF4B49CC1655A4240000C8AA /* CollectionCell.h */,
-				AF4B49CD1655A4240000C8AA /* CollectionCell.m */,
-				AF9967901655C1070051B476 /* CollectionViewController.h */,
-				AF9967911655C1070051B476 /* CollectionViewController.m */,
-				AF4B49D01655A4240000C8AA /* MainStoryboard.storyboard */,
-				AFB051B81654532200451D6E /* SMWebRequest.h */,
-				AFB051B91654532200451D6E /* SMWebRequest.m */,
-				AFB051BB1654579200451D6E /* SMXMLDocument.h */,
-				AFB051BC1654579300451D6E /* SMXMLDocument.m */,
 				AF860D1816547D54004E05D2 /* DataManager.h */,
 				AF860D1916547D54004E05D2 /* DataManager.m */,
 				AFB04F6416543BEF00451D6E /* SyncManager.h */,
 				AFB04F6516543BEF00451D6E /* SyncManager.m */,
 				AFB04F6116543AF300451D6E /* MediaItem.h */,
 				AFB04F6216543AF300451D6E /* MediaItem.m */,
-				AF116A3A16542B5F00F8D45B /* PhotoViewerViewController.h */,
-				AF116A3B16542B5F00F8D45B /* PhotoViewerViewController.m */,
-				AF116A3C16542B5F00F8D45B /* PhotoViewerViewController.xib */,
-				AFB04FAB16543DAC00451D6E /* reachability */,
+				AF4B49D01655A4240000C8AA /* MainStoryboard.storyboard */,
 				AF116A191654266000F8D45B /* Supporting Files */,
 			);
 			path = flickrShare;
@@ -304,6 +293,11 @@
 		AF17F3891654CF5700CF0D7E /* 3rd Party Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AFB04FAB16543DAC00451D6E /* reachability */,
+				AFB051B81654532200451D6E /* SMWebRequest.h */,
+				AFB051B91654532200451D6E /* SMWebRequest.m */,
+				AFB051BB1654579200451D6E /* SMXMLDocument.h */,
+				AFB051BC1654579300451D6E /* SMXMLDocument.m */,
 				AF17F38A1654CF5700CF0D7E /* asihttprequest */,
 			);
 			path = "3rd Party Frameworks";
@@ -469,7 +463,22 @@
 				AFB04FCD16543DAC00451D6E /* Reachability.h */,
 				AFB04FCE16543DAC00451D6E /* Reachability.m */,
 			);
-			path = reachability;
+			name = reachability;
+			path = ../reachability;
+			sourceTree = "<group>";
+		};
+		AFD4C4391655FDF0005F80D8 /* Views&Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AF4B49CC1655A4240000C8AA /* CollectionCell.h */,
+				AF4B49CD1655A4240000C8AA /* CollectionCell.m */,
+				AF9967901655C1070051B476 /* CollectionViewController.h */,
+				AF9967911655C1070051B476 /* CollectionViewController.m */,
+				AF116A3A16542B5F00F8D45B /* PhotoViewerViewController.h */,
+				AF116A3B16542B5F00F8D45B /* PhotoViewerViewController.m */,
+				AF116A3C16542B5F00F8D45B /* PhotoViewerViewController.xib */,
+			);
+			name = "Views&Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -18,7 +18,7 @@
 
 @property (nonatomic, unsafe_unretained) NSObject<PhotoViewerViewControllerDelegate> *delegate;  
 @property (strong, nonatomic) IBOutlet UIView *transparentView;
-@property (strong, nonatomic) IBOutlet UIImageView *image;
+@property (strong, nonatomic) IBOutlet UIImageView *fullImageView;
 @property (strong, nonatomic) IBOutlet UIImageView *backgroundImage;
 @property (strong, nonatomic) IBOutlet UIButton *prevButton;
 @property (strong, nonatomic) IBOutlet UIButton *nextButton;

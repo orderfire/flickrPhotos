@@ -133,7 +133,6 @@
 								<string key="NSFrame">{{181, 403}, {48, 52}}</string>
 								<reference key="NSSuperview" ref="133421547"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<float key="IBUIAlpha">0.89999997615814209</float>
@@ -211,11 +210,11 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">image</string>
+						<string key="label">fullImageView</string>
 						<reference key="source" ref="372490531"/>
 						<reference key="destination" ref="28646186"/>
 					</object>
-					<int key="connectionID">40</int>
+					<int key="connectionID">49</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
@@ -325,7 +324,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">48</int>
+			<int key="maxID">49</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -358,7 +357,7 @@
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="backgroundImage">UIImageView</string>
-						<string key="image">UIImageView</string>
+						<string key="fullImageView">UIImageView</string>
 						<string key="nextButton">UIButton</string>
 						<string key="prevButton">UIButton</string>
 						<string key="toolbar">UIToolbar</string>
@@ -369,8 +368,8 @@
 							<string key="name">backgroundImage</string>
 							<string key="candidateClassName">UIImageView</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="image">
-							<string key="name">image</string>
+						<object class="IBToOneOutletInfo" key="fullImageView">
+							<string key="name">fullImageView</string>
 							<string key="candidateClassName">UIImageView</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="nextButton">
