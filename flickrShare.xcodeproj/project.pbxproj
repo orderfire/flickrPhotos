@@ -26,6 +26,7 @@
 		AF17F4051654CFA900CF0D7E /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF17F4041654CFA900CF0D7E /* MobileCoreServices.framework */; };
 		AF17F4071654CFB000CF0D7E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AF17F4061654CFB000CF0D7E /* libz.dylib */; };
 		AF17F4091654CFBA00CF0D7E /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF17F4081654CFBA00CF0D7E /* CFNetwork.framework */; };
+		AF3CAF8D16560C9A006F0702 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3CAF8C16560C9A006F0702 /* Reachability.m */; };
 		AF4B49D41655A4240000C8AA /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF4B49D01655A4240000C8AA /* MainStoryboard.storyboard */; };
 		AF4DB7D21654E86D00703531 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF4DB7D11654E86D00703531 /* QuartzCore.framework */; };
 		AF860D1A16547D54004E05D2 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AF860D1916547D54004E05D2 /* DataManager.m */; };
@@ -154,6 +155,8 @@
 		AF17F4041654CFA900CF0D7E /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		AF17F4061654CFB000CF0D7E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		AF17F4081654CFBA00CF0D7E /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		AF3CAF8B16560C9A006F0702 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = flickrShare/Reachability.h; sourceTree = SOURCE_ROOT; };
+		AF3CAF8C16560C9A006F0702 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = flickrShare/Reachability.m; sourceTree = SOURCE_ROOT; };
 		AF4B49D11655A4240000C8AA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		AF4DB7D11654E86D00703531 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		AF860D1816547D54004E05D2 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
@@ -445,6 +448,8 @@
 		AFB04FAB16543DAC00451D6E /* reachability */ = {
 			isa = PBXGroup;
 			children = (
+				AF3CAF8B16560C9A006F0702 /* Reachability.h */,
+				AF3CAF8C16560C9A006F0702 /* Reachability.m */,
 			);
 			name = reachability;
 			path = ../reachability;
@@ -568,6 +573,7 @@
 				AFD4C4631655FF36005F80D8 /* SMXMLDocument.m in Sources */,
 				AFD4C4681655FF47005F80D8 /* CollectionCell.m in Sources */,
 				AFD4C4691655FF47005F80D8 /* CollectionViewController.m in Sources */,
+				AF3CAF8D16560C9A006F0702 /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
