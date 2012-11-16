@@ -54,7 +54,6 @@
 		AFD4C4631655FF36005F80D8 /* SMXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD4C4611655FF36005F80D8 /* SMXMLDocument.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AFD4C4681655FF47005F80D8 /* CollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD4C4651655FF47005F80D8 /* CollectionCell.m */; };
 		AFD4C4691655FF47005F80D8 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD4C4671655FF47005F80D8 /* CollectionViewController.m */; };
-		AFD4C46C1655FFC4005F80D8 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD4C46B1655FFC4005F80D8 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AFD4C4701656004F005F80D8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFD4C46D1656004F005F80D8 /* Default-568h@2x.png */; };
 		AFD4C4711656004F005F80D8 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = AFD4C46E1656004F005F80D8 /* Default.png */; };
 		AFD4C4721656004F005F80D8 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFD4C46F1656004F005F80D8 /* Default@2x.png */; };
@@ -190,8 +189,6 @@
 		AFD4C4651655FF47005F80D8 /* CollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionCell.m; sourceTree = "<group>"; };
 		AFD4C4661655FF47005F80D8 /* CollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
 		AFD4C4671655FF47005F80D8 /* CollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
-		AFD4C46A1655FFC4005F80D8 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = "flickrShare/3rd Party Frameworks/reachability/Reachability.h"; sourceTree = SOURCE_ROOT; };
-		AFD4C46B1655FFC4005F80D8 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = "flickrShare/3rd Party Frameworks/reachability/Reachability.m"; sourceTree = SOURCE_ROOT; };
 		AFD4C46D1656004F005F80D8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "resources/Default-568h@2x.png"; sourceTree = SOURCE_ROOT; };
 		AFD4C46E1656004F005F80D8 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = resources/Default.png; sourceTree = SOURCE_ROOT; };
 		AFD4C46F1656004F005F80D8 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "resources/Default@2x.png"; sourceTree = SOURCE_ROOT; };
@@ -448,8 +445,6 @@
 		AFB04FAB16543DAC00451D6E /* reachability */ = {
 			isa = PBXGroup;
 			children = (
-				AFD4C46A1655FFC4005F80D8 /* Reachability.h */,
-				AFD4C46B1655FFC4005F80D8 /* Reachability.m */,
 			);
 			name = reachability;
 			path = ../reachability;
@@ -573,7 +568,6 @@
 				AFD4C4631655FF36005F80D8 /* SMXMLDocument.m in Sources */,
 				AFD4C4681655FF47005F80D8 /* CollectionCell.m in Sources */,
 				AFD4C4691655FF47005F80D8 /* CollectionViewController.m in Sources */,
-				AFD4C46C1655FFC4005F80D8 /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
