@@ -18,7 +18,6 @@ typedef enum {
 }  NetworkConnection;
 
 @protocol SyncManagerDelegate <NSObject>
-@required
     -(void) syncManagerRequestStarted;
     -(void) syncManagerRequestComplete;
     -(void) syncManagerRequestError;
