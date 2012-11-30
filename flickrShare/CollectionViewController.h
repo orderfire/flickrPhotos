@@ -20,6 +20,7 @@
 @property (nonatomic, retain) NSMutableArray * sectionTitles;       //unused - refactor later (section groupings)
 @property (nonatomic, retain) IBOutlet UIImageView *backgroundImage;
 @property (nonatomic, strong) PhotoViewerViewController* photoViewer;
+
 - (void)     resetCollectionGridViewer;
 - (BOOL)     loadImagesFromSyncManager;
 - (IBAction) refreshAPI:(id)sender;

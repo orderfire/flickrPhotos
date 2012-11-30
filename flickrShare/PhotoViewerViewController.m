@@ -69,20 +69,32 @@
     [self setPrevButton:nil];
     [self setNextButton:nil];
     [self setToolbar:nil];
-    [self.oneFingerSwipeRightGesture release];
-    self.oneFingerSwipeRightGesture = nil;
-    [self.oneFingerSwipeLeftGesture release];
-    self.oneFingerSwipeLeftGesture = nil;
-    [self.longTapGesture release];
-    self.longTapGesture = nil;
-    [self.twoFingerTapGesture release];
-    self.twoFingerTapGesture = nil;
     [super viewDidUnload];
 }
 
 -(void) viewWillAppear:(BOOL)animated
 {
-    [self setupGestureRecognizers];
+    self.oneFingerSwipeRightGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(oneFingerSwipeRightGesture:)];
+    [self.oneFingerSwipeRightGesture setDirection:UISwipeGestureRecognizerDirectionRight];
+    self.oneFingerSwipeRightGesture.delegate = self;
+    [[self view] addGestureRecognizer:self.oneFingerSwipeRightGesture];
+    
+    self.oneFingerSwipeLeftGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(oneFingerSwipeLeftGesture:)];
+    [self.oneFingerSwipeLeftGesture setDirection:UISwipeGestureRecognizerDirectionLeft];
+    self.oneFingerSwipeLeftGesture.delegate = self;
+    [[self view] addGestureRecognizer:self.oneFingerSwipeLeftGesture];
+    
+    self.longTapGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longTapGesture:)];
+    self.longTapGesture.minimumPressDuration = 0.5;
+    self.longTapGesture.delegate = self;
+    [[self view] addGestureRecognizer:self.longTapGesture];
+    
+    self.twoFingerTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(twoFingerTapGesture:)];
+    self.twoFingerTapGesture.numberOfTapsRequired    = 1;
+    self.twoFingerTapGesture.numberOfTouchesRequired = 2;
+    self.twoFingerTapGesture.delegate = self;
+    [[self view] addGestureRecognizer:self.twoFingerTapGesture];
+
     self.transparentView.alpha = 0;
     self.fullImageView.image = [self loadImage];
 }
@@ -91,8 +103,23 @@
 -(void) viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
-    [self removeGestureRecognizers];
-    if([self.delegate respondsToSelector:@selector(dismissPhotoViewer:)]) 
+    [[self view] removeGestureRecognizer:self.oneFingerSwipeRightGesture];
+    [self.oneFingerSwipeRightGesture release];
+    self.oneFingerSwipeRightGesture = nil;
+    
+    [[self view] removeGestureRecognizer:self.oneFingerSwipeLeftGesture];
+    [self.oneFingerSwipeLeftGesture release];
+    self.oneFingerSwipeLeftGesture = nil;
+    
+    [[self view] removeGestureRecognizer:self.longTapGesture];
+    [self.longTapGesture release];
+    self.longTapGesture = nil;
+    
+    [[self view] removeGestureRecognizer:self.twoFingerTapGesture];
+    [self.twoFingerTapGesture release];
+    self.twoFingerTapGesture = nil;
+
+    if([self.delegate respondsToSelector:@selector(dismissPhotoViewer:)])
     {
         [self.delegate dismissPhotoViewer:animated];
     }   
@@ -180,40 +207,6 @@
 
 
 #pragma mark - Gesture Recognizer Methods
--(void) setupGestureRecognizers
-{
-    self.oneFingerSwipeRightGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(oneFingerSwipeRightGesture:)];
-    [self.oneFingerSwipeRightGesture setDirection:UISwipeGestureRecognizerDirectionRight];
-    self.oneFingerSwipeRightGesture.delegate = self;
-    [[self view] addGestureRecognizer:self.oneFingerSwipeRightGesture];
-    
-    self.oneFingerSwipeLeftGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(oneFingerSwipeLeftGesture:)];
-    [self.oneFingerSwipeLeftGesture setDirection:UISwipeGestureRecognizerDirectionLeft];
-    self.oneFingerSwipeLeftGesture.delegate = self;
-    [[self view] addGestureRecognizer:self.oneFingerSwipeLeftGesture];
-    
-    self.longTapGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longTapGesture:)];
-    self.longTapGesture.minimumPressDuration = 0.5;
-    self.longTapGesture.delegate = self;
-    [[self view] addGestureRecognizer:self.longTapGesture];
-    
-    self.twoFingerTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(twoFingerTapGesture:)];
-    self.twoFingerTapGesture.numberOfTapsRequired    = 1;
-    self.twoFingerTapGesture.numberOfTouchesRequired = 2;    
-    self.twoFingerTapGesture.delegate = self;
-    [[self view] addGestureRecognizer:self.twoFingerTapGesture];
-}
-
-
--(void) removeGestureRecognizers
-{
-    [[self view] removeGestureRecognizer:self.oneFingerSwipeLeftGesture];
-    [[self view] removeGestureRecognizer:self.oneFingerSwipeRightGesture];
-    [[self view] removeGestureRecognizer:self.longTapGesture];
-    [[self view] removeGestureRecognizer:self.twoFingerTapGesture];
-}
-
-
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
 {
     return YES;
@@ -222,6 +215,7 @@
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
 {
+    //after a few seconds, fade out the overlay controls
     self.lastTouchDate = [NSDate date];
     if (self.transparentView.alpha == 0)     {
         [UIView transitionWithView:self.view
@@ -264,26 +258,21 @@
 
 - (void)oneFingerSwipeLeftGesture:(UISwipeGestureRecognizer *)recognizer 
 {    
-    NSLog(@"Swipe left");
     [self gotoPrevImage:nil];
 }
 
 
 - (void)oneFingerSwipeRightGesture:(UISwipeGestureRecognizer *)recognizer 
 {   
-    NSLog(@"Swipe right");
     [self gotoNextImage:nil];
 }
 
 -(void) twoFingerTapGesture:(UILongPressGestureRecognizer *)recognizer
 {  
-    NSLog(@"Two finger Tap");
 }
 
 -(void) longTapGesture:(UILongPressGestureRecognizer *)recognizer
 {
-    NSLog(@"Long Tap");
-
 }
 
 

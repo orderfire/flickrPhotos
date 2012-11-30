@@ -49,7 +49,6 @@
     [directories addObject:[self getThumbnailImageSubDirectory]];
 
     NSLog(@"\nCreating # %i Directories",[directories count]);
-   
     for (int i=0;i<[directories count];i++)
     {
         NSString* directoryPath = [directories objectAtIndex:i];

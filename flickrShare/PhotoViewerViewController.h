@@ -38,9 +38,6 @@
 -(IBAction) gotoNextImage:(id)sender;
 -(IBAction) reloadImage:(int) direction;
 -(UIImage*) loadImage;
-
--(void) setupGestureRecognizers;
--(void) removeGestureRecognizers;
 -(void) fadeTransparentView;
 
 @end
