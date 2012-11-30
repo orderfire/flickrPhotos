@@ -58,17 +58,25 @@
 {
     [super viewDidLoad];
     self.navigationItem.leftBarButtonItem  = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(navBack)];
-  //  [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"header_bar_dark_grey.png"] forBarMetrics:UIBarMetricsDefault];
 }
 
 - (void)viewDidUnload
 {
+    [self.photoArray release];
+    self.photoArray = nil;
     [self setTransparentView:nil];
     [self setBackgroundImage:nil];
     [self setPrevButton:nil];
     [self setNextButton:nil];
     [self setToolbar:nil];
-    [self setPhotoArray:nil];
+    [self.oneFingerSwipeRightGesture release];
+    self.oneFingerSwipeRightGesture = nil;
+    [self.oneFingerSwipeLeftGesture release];
+    self.oneFingerSwipeLeftGesture = nil;
+    [self.longTapGesture release];
+    self.longTapGesture = nil;
+    [self.twoFingerTapGesture release];
+    self.twoFingerTapGesture = nil;
     [super viewDidUnload];
 }
 

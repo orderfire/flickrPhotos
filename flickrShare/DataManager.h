@@ -6,6 +6,8 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
+//created as Singleton for reuse throughout the app.  
+
 @class MediaItem;
 
 @protocol DataManagerDelegate <NSObject>
@@ -25,7 +27,6 @@
 
 - (void) createDirectoryStructureInDocuments;
 - (BOOL) createDirectoryUsingPath:(NSString*) directoryPath;
-
 - (void) copyFileFromBundleToDocuments:(NSString*)filename Directory:(NSString*)subdirectoryString OverWrite:(BOOL) overwrite;
 
 

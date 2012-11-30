@@ -15,6 +15,7 @@
 @synthesize items = _items;
 @synthesize sectionTitles = _sectionTitles;
 @synthesize backgroundImage =_backgroundImage;
+@synthesize photoViewer = _photoViewer;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,7 +34,6 @@
     [self.sectionTitles addObject:@"Flickr Photos"];
     [self.collectionView registerClass:[CollectionCell class] forCellWithReuseIdentifier:@"ReuseId"];
     self.collectionView.allowsSelection = YES;
-   
     [super viewDidLoad];
 }
 
@@ -72,11 +72,11 @@
 {
     if ([[self.items objectAtIndex:indexPath.row] getFullImage])    //only allow if full image is available (downloaded)
     {
-        PhotoViewerViewController* photoViewer = [[PhotoViewerViewController alloc] initWithNibName:@"PhotoViewerViewController" bundle:nil];
-        photoViewer.delegate = self;
-        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:photoViewer];
-        photoViewer.photoArray  = self.items;
-        photoViewer.selectedIndex = indexPath.row;
+        self.photoViewer = [[PhotoViewerViewController alloc] initWithNibName:@"PhotoViewerViewController" bundle:nil];
+        self.photoViewer.delegate = self;
+        UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:self.photoViewer];
+        self.photoViewer.photoArray  = self.items;
+        self.photoViewer.selectedIndex = indexPath.row;
         [self.collectionView deselectItemAtIndexPath:indexPath animated:NO];
         [self presentViewController:navController animated:YES  completion:nil];
     }
@@ -84,9 +84,10 @@
 
 
 -(void) dismissPhotoViewer:(BOOL)animated       {   
-    NSLog(@"Dismiss photo");
-    
+    [self.photoViewer release];
+    self.photoViewer = nil;
 }
+
 
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
     // TODO: Deselect item
@@ -173,10 +174,19 @@
 }
 
 -(void) resetCollectionGridViewer {
-    self.items          = nil;
-    self.sectionTitles  = nil;
-    self.sectionTitles  = [[NSMutableArray alloc] init];
+    if (self.items)
+    {   
+        [self.items release];
+        self.items          = nil;
+    }
     self.items          = [[NSMutableArray alloc] init];
+    
+    if (self.sectionTitles)
+    {
+        [self.sectionTitles release];
+        self.sectionTitles  = nil;
+    }
+    self.sectionTitles  = [[NSMutableArray alloc] init];
     [self.collectionView reloadData];
 }
 

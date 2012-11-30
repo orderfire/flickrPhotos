@@ -122,7 +122,6 @@ static SyncManager *sharedInstance = nil;
 	self.networkQueue = [ASINetworkQueue queue];
 	[self.networkQueue setDelegate:self];
 	[self.networkQueue setMaxConcurrentOperationCount:kConcurrentDownloadThreads];
-
 	[self.networkQueue setRequestDidFinishSelector:   @selector(downloadImageRequestFinished:)];
 	[self.networkQueue setRequestDidFailSelector:     @selector(downloadImageRequestFailed:)];
 	[self.networkQueue setQueueDidFinishSelector:     @selector(downloadImageQueueFinished:)];
@@ -141,7 +140,7 @@ static SyncManager *sharedInstance = nil;
 
 //use a ASINetworkQueue to download the urls (concurrent background threads with progress notifier)
 -(void) downloadURLInBackground:(MediaItem*) item    {
-  //  NSLog(@"Downloading from URL: %@", item.url);
+    //  NSLog(@"Downloading from URL: %@", item.url);
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:item.url];
     //stores response directly in a file in temp directory (saves memory)
     [request setDownloadDestinationPath:[NSString stringWithFormat:@"%@/%@",NSTemporaryDirectory(),item.fileName]];
@@ -208,7 +207,7 @@ static SyncManager *sharedInstance = nil;
 -(void) cancelDownloadQueue {
     //stop downloading images from urls
     [[self networkQueue] cancelAllOperations];
-//    self.networkQueue = nil;
+    self.networkQueue = nil;
     NSLog(@"Download Queue Cancelled");
 }
 
@@ -255,6 +254,8 @@ static SyncManager *sharedInstance = nil;
 
 
 -(UIImage*) generateThumbnailFromDocumentsImageFile:(NSString*)filename   {
+    //generate a thumbnail.  Doesn't yet handle retina. Refactor later.
+    
     UIImage* thumbnail;
 
     NSString *fullPathToThumbImage  = [[[DataManager sharedInstance] getDocumentsDirectory] stringByAppendingFormat:@"/%@/%@",kTHUMBNAIL_IMAGE_DIRECTORY,filename];

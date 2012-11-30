@@ -144,12 +144,9 @@ static DataManager *sharedInstance = nil;
         }
         if (error)
         {
-            NSLog(@"Could not copy image file from bundle. %@", error, [error userInfo]);
         }
     }
 }
-
-
 
 
 - (BOOL) checkFileExistsInDocumentsDirectory: (NSString *) filename Path:(NSString*) path

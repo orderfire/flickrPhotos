@@ -10,7 +10,7 @@
 
 @interface CollectionCell : UICollectionViewCell
 @property (nonatomic, assign)     IBOutlet UIImageView *collectionImageView;
-@property (nonatomic, retain)       MediaItem*            item;
+@property (nonatomic, retain)     MediaItem*            item;
 
 -(void) refreshThumbnail;
 
