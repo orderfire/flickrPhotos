@@ -28,8 +28,8 @@ typedef enum {
 
 @interface SyncManager : NSObject
 @property (nonatomic, assign)   NSObject<SyncManagerDelegate> *delegate;
-@property(nonatomic, retain)    NSMutableArray* downloadedItems;
-@property(nonatomic, readwrite) NetworkConnection networkStatus;
+@property (nonatomic, retain)    NSMutableArray* downloadedItems;
+@property (nonatomic, readwrite) NetworkConnection networkStatus;
 @property (nonatomic, retain)   NSURL *feedURL;
 @property (nonatomic, retain)   SMWebRequest *flickrRequest;
 @property (nonatomic, retain)   NSMutableArray *responseArray;

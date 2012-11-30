@@ -137,33 +137,27 @@
 
 #pragma mark SyncManagerDelegate Methods
 -(void) syncManagerRequestStarted  {
-    NSLog(@"Request Started");
 }
 
 
 -(void) syncManagerRequestComplete  {
-    NSLog(@"Request Complete");
     [self loadImagesFromSyncManager];
     [self.collectionView reloadData];
 }
 
 
 -(void) syncManagerRequestError  {
-    NSLog(@"Request Error");
     
 }
 
 
 -(void) downloadImageQueueComplete  {
-    NSLog(@"DownloadQueue Completed");
 }
 
 -(void) thumbnailAvailableForItem:(MediaItem *)item {
-    NSLog(@"Thumbnail Available:   %@", [NSDate date]);
     if ([self.items containsObject:item])
     {
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[self.items indexOfObject:item] inSection:0];
-        NSLog(@"      Index: %@", indexPath);
         [self.collectionView reloadItemsAtIndexPaths:[NSArray arrayWithObject:indexPath]];
     }
 }

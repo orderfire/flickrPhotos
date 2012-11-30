@@ -75,39 +75,6 @@
 }
 
 
-+(void) copyFileFromBundleToDocuments:(NSString*)filename Directory:(NSString*)subdirectoryString OverWrite:(BOOL) overwrite
-{
-    NSError* error = nil;
-    //check / create subdirectories
-    NSString *subdirectories = [[self getDocumentsDirectory] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@",subdirectoryString]];
-    if (![[NSFileManager defaultManager] fileExistsAtPath:subdirectories])  {
-        [[NSFileManager defaultManager] createDirectoryAtPath:subdirectories withIntermediateDirectories:YES attributes:nil error:&error]; //Create folder
-        if (error)
-        {
-//            NSLog(@"Could not create image subdirectories. %@", error, [error userInfo]);
-        }
-    }
-    
-    NSString *filepath = [subdirectories stringByAppendingPathComponent:filename];
-    if ([[NSFileManager defaultManager] fileExistsAtPath:filepath])  {
-        //NSLog(@"No copy  %@  already exists",filepath);
-    }
-    else  {
-        NSString *filenameOnly      = [filename substringToIndex:[filename length] - 4];
-        NSString *filenameExtension = [filename substringFromIndex:[filename length] - 3];
-        NSString* loadPath = [[NSBundle mainBundle] pathForResource:filenameOnly ofType:filenameExtension];
-   //     NSLog(@"FilenameOnly: %@ ",filenameOnly);
-   //     NSLog(@"FilenameExt : %@ ",filenameExtension);
-   //     NSLog(@"Load From     %@",loadPath);
-        
-        if ([[NSFileManager defaultManager] copyItemAtPath:loadPath toPath:filepath error:&error])
-        {   
-        }
-        if (error)
-        {
-        }
-    }
-}
 
 
 +(BOOL) checkFileExistsInDocumentsDirectory: (NSString *) filename Path:(NSString*) path

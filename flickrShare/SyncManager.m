@@ -111,7 +111,7 @@ static SyncManager *sharedInstance = nil;
 }
 
 
-#pragma mark Downlload Images Request Methods
+#pragma mark Download Images Request Methods
 -(void) downloadImages  {
     //will use ASIHTTPRequest & a download queue to asynchronously download images from URLs
 

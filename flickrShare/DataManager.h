@@ -21,8 +21,6 @@
 
 + (void) createDirectoryStructureInDocuments;
 + (BOOL) createDirectoryUsingPath:(NSString*) directoryPath;
-+ (void) copyFileFromBundleToDocuments:(NSString*)filename Directory:(NSString*)subdirectoryString OverWrite:(BOOL) overwrite;
-
 
 +(UIImage*) getImageFromDocumentsDirectory:(NSString*) filename SubDirectory:(NSString*) subdirectory;
 +(UIImage*) getImageFromPath:(NSString*) filePath;
