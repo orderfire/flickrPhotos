@@ -16,7 +16,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [self initializeDocumentsDirectory];
-    [[SyncManager sharedInstance] downloadFlickrPhotos];    //created syncmanager as delegate so the sync isn't tied to the viewcontroller (when it appears). 
+    [[SyncManager sharedInstance] downloadFlickrPhotos];    //created syncmanager as delegate so the sync isn't tied to the viewcontroller (when it appears).  Was planning on using this class in another project
     return YES;
 }
 							
@@ -48,7 +48,7 @@
 }
 
 -(void) initializeDocumentsDirectory    {
-    [[DataManager sharedInstance] createDirectoryStructureInDocuments];
+    [DataManager createDirectoryStructureInDocuments];
 }
 
 @end

@@ -39,14 +39,14 @@
 
 
 -(UIImage*) getThumbnailImage   {
-    return [[DataManager sharedInstance] getImageFromDocumentsDirectory:self.fileName SubDirectory:kTHUMBNAIL_IMAGE_DIRECTORY];
+    return [DataManager getImageFromDocumentsDirectory:self.fileName SubDirectory:kTHUMBNAIL_IMAGE_DIRECTORY];
 
 }
 
 
 -(UIImage*) getFullImage        {
     if (!self.fullImage)  {
-        self.fullImage = [[DataManager sharedInstance] getImageFromDocumentsDirectory:self.fileName SubDirectory:kIMAGE_DIRECTORY];
+        self.fullImage = [DataManager getImageFromDocumentsDirectory:self.fileName SubDirectory:kIMAGE_DIRECTORY];
     }
     return self.fullImage;
 }

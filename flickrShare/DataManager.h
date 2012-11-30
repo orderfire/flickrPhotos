@@ -10,27 +10,22 @@
 
 @class MediaItem;
 
-@protocol DataManagerDelegate <NSObject>
-@end
-
 @interface DataManager : NSObject 
 {}
 
-@property (nonatomic, assign) NSObject<DataManagerDelegate> *delegate;
++ (NSString*) getDocumentsDirectory;
++ (NSString*) getHDImageSubDirectory;
++ (NSString*) getFullHDImageDirectory;
++ (NSString*) getThumbnailImageSubDirectory;
++ (NSString*) getFullThumbnailImageDirectory;
 
-+ (id)sharedInstance;
-- (NSString*) getDocumentsDirectory;
-- (NSString*) getHDImageSubDirectory;
-- (NSString*) getFullHDImageDirectory;
-- (NSString*) getThumbnailImageSubDirectory;
-- (NSString*) getFullThumbnailImageDirectory;
-
-- (void) createDirectoryStructureInDocuments;
-- (BOOL) createDirectoryUsingPath:(NSString*) directoryPath;
-- (void) copyFileFromBundleToDocuments:(NSString*)filename Directory:(NSString*)subdirectoryString OverWrite:(BOOL) overwrite;
++ (void) createDirectoryStructureInDocuments;
++ (BOOL) createDirectoryUsingPath:(NSString*) directoryPath;
++ (void) copyFileFromBundleToDocuments:(NSString*)filename Directory:(NSString*)subdirectoryString OverWrite:(BOOL) overwrite;
 
 
--(UIImage*) getImageFromDocumentsDirectory:(NSString*) filename SubDirectory:(NSString*) subdirectory;
--(UIImage*) getImageFromPath:(NSString*) filePath;
++(UIImage*) getImageFromDocumentsDirectory:(NSString*) filename SubDirectory:(NSString*) subdirectory;
++(UIImage*) getImageFromPath:(NSString*) filePath;
++(BOOL)     checkFileExistsInDocumentsDirectory: (NSString *) filename Path:(NSString*) path;
 
 @end

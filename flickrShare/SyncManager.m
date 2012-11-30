@@ -226,11 +226,11 @@ static SyncManager *sharedInstance = nil;
     NSString *tempFilePath;
     
     if (subdirectory)  {
-        docsFilePath         = [[[DataManager sharedInstance] getDocumentsDirectory] stringByAppendingFormat:@"%@/%@/%@",subdirectory,kIMAGE_DIRECTORY,filename];
+        docsFilePath         = [[DataManager  getDocumentsDirectory] stringByAppendingFormat:@"%@/%@/%@",subdirectory,kIMAGE_DIRECTORY,filename];
         tempFilePath         = [NSTemporaryDirectory()                               stringByAppendingFormat:@"%@/%@",subdirectory,filename];
     }
     else {
-        docsFilePath         = [[[DataManager sharedInstance] getDocumentsDirectory] stringByAppendingFormat:@"/%@/%@",kIMAGE_DIRECTORY,filename];
+        docsFilePath         = [[DataManager  getDocumentsDirectory] stringByAppendingFormat:@"/%@/%@",kIMAGE_DIRECTORY,filename];
         tempFilePath         = [NSTemporaryDirectory()                               stringByAppendingFormat: @"%@",filename];
     }
     
@@ -258,8 +258,8 @@ static SyncManager *sharedInstance = nil;
     
     UIImage* thumbnail;
 
-    NSString *fullPathToThumbImage  = [[[DataManager sharedInstance] getDocumentsDirectory] stringByAppendingFormat:@"/%@/%@",kTHUMBNAIL_IMAGE_DIRECTORY,filename];
-    UIImage *mainImage              = [[DataManager sharedInstance] getImageFromDocumentsDirectory:filename SubDirectory:kIMAGE_DIRECTORY];
+    NSString *fullPathToThumbImage  = [[DataManager  getDocumentsDirectory] stringByAppendingFormat:@"/%@/%@",kTHUMBNAIL_IMAGE_DIRECTORY,filename];
+    UIImage *mainImage              = [DataManager  getImageFromDocumentsDirectory:filename SubDirectory:kIMAGE_DIRECTORY];
     if (!mainImage)
     {
         return nil; //image not found in specified directory. file missing

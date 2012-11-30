@@ -10,78 +10,40 @@
 #import <AVFoundation/AVFoundation.h>
 #import "MediaItem.h"
 
-#pragma mark Private
-@interface DataManager ()
-    -(BOOL)        checkFileExistsInDocumentsDirectory: (NSString *) filename Path:(NSString*) path;
-@end
-
 
 #pragma mark Public
 @implementation DataManager
-@synthesize delegate = _delegate;
 
-static DataManager *sharedInstance = nil;
-
-
-#pragma mark SINGLETON METHODS
-+ (DataManager *)sharedInstance {
-    if (sharedInstance == nil) {
-        sharedInstance = [[super allocWithZone:NULL] init];
-     }
-    return sharedInstance;
-}
-
-
-- (id)init {
-    // We can still have a regular init method, that will get called the first time the Singleton is used
-    if (self = [super init])
-    {
-    }
-    return self;
-}
-
-
-// We don't want to allocate a new instance, so return the current one
-+ (id)allocWithZone:(NSZone*)zone {
-    return [self sharedInstance];
-}
-
-// Equally, we don't want to generate multiple copies of the singleton
-- (id)copyWithZone:(NSZone *)zone {
-    return self;
-}
-
-
--(NSString*) getDocumentsDirectory  {
++(NSString*) getDocumentsDirectory  {
     return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
 }
 
 
--(NSString*) getHDImageSubDirectory  {
++(NSString*) getHDImageSubDirectory  {
     NSString* subdirectory = [NSString stringWithFormat:@"%@",kIMAGE_DIRECTORY];
     return subdirectory;
 }
 
 
--(NSString*) getFullHDImageDirectory  {
++(NSString*) getFullHDImageDirectory  {
     NSString* directory = [[self getDocumentsDirectory] stringByAppendingFormat:@"/%@",[self getHDImageSubDirectory]];
     return directory;
 }
 
 
--(NSString*) getThumbnailImageSubDirectory  {
++(NSString*) getThumbnailImageSubDirectory  {
     NSString* subdirectory = [NSString stringWithFormat:@"%@",kTHUMBNAIL_IMAGE_DIRECTORY];
     return subdirectory;
 }
 
 
--(NSString*) getFullThumbnailImageDirectory  {
++(NSString*) getFullThumbnailImageDirectory  {
     NSString* directory = [[self getDocumentsDirectory] stringByAppendingFormat:@"/%@",[self getThumbnailImageSubDirectory]];
     return directory;
 }
 
 
--(void) createDirectoryStructureInDocuments  {
++(void) createDirectoryStructureInDocuments  {
     NSMutableArray* directories = [[NSMutableArray alloc] init];
     [directories addObject:[self getHDImageSubDirectory]];
     [directories addObject:[self getThumbnailImageSubDirectory]];
@@ -98,7 +60,7 @@ static DataManager *sharedInstance = nil;
 }
 
 
--(BOOL) createDirectoryUsingPath:(NSString*) directoryPath {
++(BOOL) createDirectoryUsingPath:(NSString*) directoryPath {
     NSError* error = nil;
     
     if (![[NSFileManager defaultManager] fileExistsAtPath:directoryPath])  {
@@ -114,7 +76,7 @@ static DataManager *sharedInstance = nil;
 }
 
 
--(void) copyFileFromBundleToDocuments:(NSString*)filename Directory:(NSString*)subdirectoryString OverWrite:(BOOL) overwrite
++(void) copyFileFromBundleToDocuments:(NSString*)filename Directory:(NSString*)subdirectoryString OverWrite:(BOOL) overwrite
 {
     NSError* error = nil;
     //check / create subdirectories
@@ -149,7 +111,7 @@ static DataManager *sharedInstance = nil;
 }
 
 
-- (BOOL) checkFileExistsInDocumentsDirectory: (NSString *) filename Path:(NSString*) path
++(BOOL) checkFileExistsInDocumentsDirectory: (NSString *) filename Path:(NSString*) path
 { //returns TRUE if file is in docs dir, FALSE if NOT in directory
 	NSString *fullFilePath			= [[self getDocumentsDirectory] stringByAppendingFormat:@"%@/%@.plist", path,filename];
 	if ( [[NSFileManager defaultManager] fileExistsAtPath:fullFilePath] )
@@ -160,19 +122,19 @@ static DataManager *sharedInstance = nil;
 
 
 //Move Image Files
--(UIImage*) getImageFromDocumentsDirectory:(NSString*) filename SubDirectory:(NSString*) subdirectory  {
++(UIImage*) getImageFromDocumentsDirectory:(NSString*) filename SubDirectory:(NSString*) subdirectory  {
     NSString *docsFilePath;
     if (subdirectory)   {
-        docsFilePath         = [[[DataManager sharedInstance] getDocumentsDirectory] stringByAppendingFormat:@"/%@/%@",subdirectory,filename];
+        docsFilePath         = [[DataManager  getDocumentsDirectory] stringByAppendingFormat:@"/%@/%@",subdirectory,filename];
     }
     else    {
-        docsFilePath         = [[[DataManager sharedInstance] getDocumentsDirectory] stringByAppendingFormat:@"/%@",filename];
+        docsFilePath         = [[DataManager  getDocumentsDirectory] stringByAppendingFormat:@"/%@",filename];
     }
     return [self getImageFromPath:docsFilePath];
 }
 
 
--(UIImage*) getImageFromPath:(NSString*) filePath  {
++(UIImage*) getImageFromPath:(NSString*) filePath  {
     //NSLog(@"%@", filePath);
     if (![[NSFileManager defaultManager] fileExistsAtPath:filePath])  {
         return nil;
