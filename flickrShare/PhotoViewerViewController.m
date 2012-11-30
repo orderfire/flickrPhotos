@@ -100,7 +100,7 @@
 #pragma mark USER ACTIONS
 -(IBAction) navBack
 {
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)gotoPrevImage:(id)sender {

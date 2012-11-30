@@ -42,6 +42,5 @@
 -(void) setupGestureRecognizers;
 -(void) removeGestureRecognizers;
 -(void) fadeTransparentView;
--(BOOL) checkDateFromLastTouch: (NSTimeInterval) seconds;
 
 @end

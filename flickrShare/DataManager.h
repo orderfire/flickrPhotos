@@ -30,7 +30,6 @@
 - (BOOL) createDirectoryUsingPath:(NSString*) directoryPath;
 
 - (void) copyFileFromBundleToDocuments:(NSString*)filename Directory:(NSString*)subdirectoryString OverWrite:(BOOL) overwrite;
-- (BOOL) verifySampleDataStore;
 
 
 -(UIImage*) getImageFromDocumentsDirectory:(NSString*) filename SubDirectory:(NSString*) subdirectory;

@@ -78,7 +78,7 @@
         photoViewer.photoArray  = self.items;
         photoViewer.selectedIndex = indexPath.row;
         [self.collectionView deselectItemAtIndexPath:indexPath animated:NO];
-        [self presentModalViewController:navController animated:YES];
+        [self presentViewController:navController animated:YES  completion:nil];
     }
 }
 
