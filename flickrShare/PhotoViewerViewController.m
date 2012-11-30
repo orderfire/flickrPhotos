@@ -28,15 +28,15 @@
 @end
 
 @implementation PhotoViewerViewController
-@synthesize delegate;
-@synthesize transparentView;
-@synthesize fullImageView;
-@synthesize backgroundImage;
-@synthesize prevButton;
-@synthesize nextButton;
-@synthesize toolbar;
+@synthesize delegate = _delegate;
+@synthesize transparentView = _transparentView;
+@synthesize fullImageView = _fullImageView;
+@synthesize backgroundImage = _backgroundImage;
+@synthesize prevButton = _prevButton;
+@synthesize nextButton = _nextButton;
+@synthesize toolbar = _toolbar;
 @synthesize photoArray = _photoArray;
-@synthesize selectedIndex;
+@synthesize selectedIndex = _selectedIndex;
 @synthesize oneFingerSwipeLeftGesture = _oneFingerSwipeLeftGesture;
 @synthesize oneFingerSwipeRightGesture = _oneFingerSwipeRightGesture;
 @synthesize longTapGesture = _longTapGesture;

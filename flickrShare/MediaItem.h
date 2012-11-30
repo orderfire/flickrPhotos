@@ -11,12 +11,12 @@
 
 @interface MediaItem : NSObject
 
-@property(nonatomic,strong) UIImage *thumbnail;
-@property(nonatomic,strong) UIImage *fullImage;
-@property(nonatomic,strong) NSString *fileName;
-@property(nonatomic,strong) NSString *author;
-@property(nonatomic,strong) NSURL    *url;
-@property(nonatomic,strong) NSString *published;
+@property(nonatomic,retain) UIImage *thumbnail;
+@property(nonatomic,retain) UIImage *fullImage;
+@property(nonatomic,retain) NSString *fileName;
+@property(nonatomic,retain) NSString *author;
+@property(nonatomic,retain) NSURL    *url;
+@property(nonatomic,retain) NSString *published;
 @property(nonatomic,assign) BOOL          imageDownloaded;
 @property(nonatomic,assign) BOOL          thumbnailSaved;
 

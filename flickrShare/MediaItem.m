@@ -10,12 +10,12 @@
 #import "DataManager.h"
 
 @implementation MediaItem
-@synthesize thumbnail;
-@synthesize fullImage;
-@synthesize fileName;
-@synthesize author;
-@synthesize url;
-@synthesize published;
+@synthesize thumbnail = _thumbnail;
+@synthesize fullImage = _fullImage;
+@synthesize fileName = _fileName;
+@synthesize author = _author;
+@synthesize url = _url;
+@synthesize published = _published;
 
 +(MediaItem*) createWithItem:(SMXMLElement*) element   {
     //extracts urls & media info from XML element

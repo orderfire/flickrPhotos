@@ -21,7 +21,7 @@
 
 #pragma mark Public
 @implementation DataManager
-@synthesize delegate;
+@synthesize delegate = _delegate;
 
 static DataManager *sharedInstance = nil;
 

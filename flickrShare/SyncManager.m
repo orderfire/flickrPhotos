@@ -17,13 +17,13 @@
 #import <QuartzCore/QuartzCore.h>
 
 @implementation SyncManager
-@synthesize delegate;
-@synthesize downloadedItems;
-@synthesize networkStatus;
-@synthesize feedURL;
-@synthesize responseArray;
-@synthesize flickrRequest;
-@synthesize networkQueue;
+@synthesize delegate = _delegate;
+@synthesize downloadedItems = _downloadedItems;
+@synthesize networkStatus = _networkStatus;
+@synthesize feedURL = _feedURL;
+@synthesize responseArray = _responseArray;
+@synthesize flickrRequest = _flickrRequest;
+@synthesize networkQueue = _networkQueue;
 
 static SyncManager *sharedInstance = nil;
 
@@ -40,18 +40,18 @@ static SyncManager *sharedInstance = nil;
     //check wifi network connection
     Reachability *connection = [Reachability reachabilityForLocalWiFi];
     if ([connection currentReachabilityStatus] != NotReachable)  {
-        networkStatus = wifiAvailable;          //wifi on
+        self.networkStatus = wifiAvailable;          //wifi on
         return YES;
     }
     else {
         //check cellular network connection
         connection = [Reachability reachabilityForInternetConnection];
         if ([connection currentReachabilityStatus] != NotReachable)  {
-            networkStatus = cellularAvailable;      //edge, 3G, or 4G available
+            self.networkStatus = cellularAvailable;      //edge, 3G, or 4G available
             return YES;
         }
         else  {
-            networkStatus = noConnection;
+            self.networkStatus = noConnection;
             return NO;
         }
     }
@@ -65,9 +65,9 @@ static SyncManager *sharedInstance = nil;
         self.flickrRequest = [SMWebRequest requestWithURL:[NSURL URLWithString:@"http://api.flickr.com/services/feeds/photos_public.gne"]
                                            delegate:(id<SMWebRequestDelegate>)self
                                             context:nil];
-        [flickrRequest addTarget:self action:@selector(flickrRequestComplete:)  forRequestEvents:SMWebRequestEventComplete];
-        [flickrRequest addTarget:self action:@selector(flickrRequestError:)     forRequestEvents:SMWebRequestEventError];
-        [flickrRequest start];
+        [self.flickrRequest addTarget:self action:@selector(flickrRequestComplete:)  forRequestEvents:SMWebRequestEventComplete];
+        [self.flickrRequest addTarget:self action:@selector(flickrRequestError:)     forRequestEvents:SMWebRequestEventError];
+        [self.flickrRequest start];
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
         if ([self.delegate respondsToSelector:@selector(syncManagerRequestStarted)])
         {
@@ -216,6 +216,7 @@ static SyncManager *sharedInstance = nil;
 -(void) dealloc {
     self.flickrRequest  = nil;
     self.networkQueue   = nil;
+    [super dealloc];
 }
 
 

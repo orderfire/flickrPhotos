@@ -9,8 +9,8 @@
 #import "MediaItem.h"
 
 @interface CollectionCell : UICollectionViewCell
-@property (weak, nonatomic)     IBOutlet UIImageView *collectionImageView;
-@property (nonatomic, strong)   MediaItem*            item;
+@property (nonatomic, assign)     IBOutlet UIImageView *collectionImageView;
+@property (nonatomic, retain)       MediaItem*            item;
 
 -(void) refreshThumbnail;
 

@@ -17,19 +17,19 @@
 {}
 
 @property (nonatomic, unsafe_unretained) NSObject<PhotoViewerViewControllerDelegate> *delegate;  
-@property (strong, nonatomic) IBOutlet UIView *transparentView;
-@property (strong, nonatomic) IBOutlet UIImageView *fullImageView;
-@property (strong, nonatomic) IBOutlet UIImageView *backgroundImage;
-@property (strong, nonatomic) IBOutlet UIButton *prevButton;
-@property (strong, nonatomic) IBOutlet UIButton *nextButton;
-@property (strong, nonatomic) IBOutlet UIToolbar *toolbar;
-@property (strong, nonatomic)          NSMutableArray* photoArray;
-@property (readwrite, nonatomic)       NSUInteger selectedIndex;
-@property (nonatomic, strong)          NSDate* lastTouchDate;
-@property (nonatomic, strong) UISwipeGestureRecognizer* oneFingerSwipeRightGesture;
-@property (nonatomic, strong) UISwipeGestureRecognizer* oneFingerSwipeLeftGesture;
-@property (nonatomic, strong) UILongPressGestureRecognizer *longTapGesture;
-@property (nonatomic, strong) UITapGestureRecognizer *twoFingerTapGesture;
+@property (nonatomic, retain) IBOutlet UIView *transparentView;
+@property (nonatomic, retain) IBOutlet UIImageView *fullImageView;
+@property (nonatomic, retain) IBOutlet UIImageView *backgroundImage;
+@property (nonatomic, retain) IBOutlet UIButton *prevButton;
+@property (nonatomic, retain) IBOutlet UIButton *nextButton;
+@property (nonatomic, retain) IBOutlet UIToolbar *toolbar;
+@property (nonatomic, retain)          NSMutableArray* photoArray;
+@property (nonatomic, assign)       NSUInteger selectedIndex;
+@property (nonatomic, retain)          NSDate* lastTouchDate;
+@property (nonatomic, retain) UISwipeGestureRecognizer* oneFingerSwipeRightGesture;
+@property (nonatomic, retain) UISwipeGestureRecognizer* oneFingerSwipeLeftGesture;
+@property (nonatomic, retain) UILongPressGestureRecognizer *longTapGesture;
+@property (nonatomic, retain) UITapGestureRecognizer *twoFingerTapGesture;
 
 
 -(IBAction) navBack;

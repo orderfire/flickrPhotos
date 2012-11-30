@@ -14,7 +14,7 @@
 @interface DataManager : NSObject 
 {}
 
-@property (nonatomic, weak) NSObject<DataManagerDelegate> *delegate;  
+@property (nonatomic, assign) NSObject<DataManagerDelegate> *delegate;
 
 + (id)sharedInstance;
 - (BOOL) saveToPlist: (NSMutableArray*) saveArray Filename: (NSString*) fileName Path: filePath Overwrite: (BOOL) overwrite;

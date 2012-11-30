@@ -12,8 +12,8 @@
 		AF116A171654266000F8D45B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF116A161654266000F8D45B /* CoreGraphics.framework */; };
 		AF116A1D1654266000F8D45B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AF116A1B1654266000F8D45B /* InfoPlist.strings */; };
 		AF116A1F1654266000F8D45B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AF116A1E1654266000F8D45B /* main.m */; };
-		AF116A231654266000F8D45B /* _AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AF116A221654266000F8D45B /* _AppDelegate.m */; };
-		AF116A3D16542B5F00F8D45B /* PhotoViewerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF116A3B16542B5F00F8D45B /* PhotoViewerViewController.m */; };
+		AF116A231654266000F8D45B /* _AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AF116A221654266000F8D45B /* _AppDelegate.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AF116A3D16542B5F00F8D45B /* PhotoViewerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF116A3B16542B5F00F8D45B /* PhotoViewerViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AF116A3E16542B5F00F8D45B /* PhotoViewerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF116A3C16542B5F00F8D45B /* PhotoViewerViewController.xib */; };
 		AF17F3DE1654CF5700CF0D7E /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = AF17F38D1654CF5700CF0D7E /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AF17F3DF1654CF5700CF0D7E /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = AF17F3901654CF5700CF0D7E /* ASIDataCompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -26,12 +26,12 @@
 		AF17F4051654CFA900CF0D7E /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF17F4041654CFA900CF0D7E /* MobileCoreServices.framework */; };
 		AF17F4071654CFB000CF0D7E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AF17F4061654CFB000CF0D7E /* libz.dylib */; };
 		AF17F4091654CFBA00CF0D7E /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF17F4081654CFBA00CF0D7E /* CFNetwork.framework */; };
-		AF3CAF8D16560C9A006F0702 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3CAF8C16560C9A006F0702 /* Reachability.m */; };
+		AF3CAF8D16560C9A006F0702 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3CAF8C16560C9A006F0702 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AF4B49D41655A4240000C8AA /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF4B49D01655A4240000C8AA /* MainStoryboard.storyboard */; };
 		AF4DB7D21654E86D00703531 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF4DB7D11654E86D00703531 /* QuartzCore.framework */; };
-		AF860D1A16547D54004E05D2 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AF860D1916547D54004E05D2 /* DataManager.m */; };
-		AFB04F6316543AF300451D6E /* MediaItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB04F6216543AF300451D6E /* MediaItem.m */; };
-		AFB04F6616543BF000451D6E /* SyncManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB04F6516543BEF00451D6E /* SyncManager.m */; };
+		AF860D1A16547D54004E05D2 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AF860D1916547D54004E05D2 /* DataManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AFB04F6316543AF300451D6E /* MediaItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB04F6216543AF300451D6E /* MediaItem.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AFB04F6616543BF000451D6E /* SyncManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB04F6516543BEF00451D6E /* SyncManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AFB050D3165446CB00451D6E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFB04FF716543F5900451D6E /* SystemConfiguration.framework */; };
 		AFD4C44C1655FF20005F80D8 /* arrow_left.png in Resources */ = {isa = PBXBuildFile; fileRef = AFD4C43A1655FF20005F80D8 /* arrow_left.png */; };
 		AFD4C44D1655FF20005F80D8 /* arrow_left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFD4C43B1655FF20005F80D8 /* arrow_left@2x.png */; };
@@ -53,8 +53,8 @@
 		AFD4C45D1655FF20005F80D8 /* shadow_bottom@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFD4C44B1655FF20005F80D8 /* shadow_bottom@2x.png */; };
 		AFD4C4621655FF36005F80D8 /* SMWebRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD4C45F1655FF36005F80D8 /* SMWebRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AFD4C4631655FF36005F80D8 /* SMXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD4C4611655FF36005F80D8 /* SMXMLDocument.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		AFD4C4681655FF47005F80D8 /* CollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD4C4651655FF47005F80D8 /* CollectionCell.m */; };
-		AFD4C4691655FF47005F80D8 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD4C4671655FF47005F80D8 /* CollectionViewController.m */; };
+		AFD4C4681655FF47005F80D8 /* CollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD4C4651655FF47005F80D8 /* CollectionCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AFD4C4691655FF47005F80D8 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD4C4671655FF47005F80D8 /* CollectionViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AFD4C4701656004F005F80D8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFD4C46D1656004F005F80D8 /* Default-568h@2x.png */; };
 		AFD4C4711656004F005F80D8 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = AFD4C46E1656004F005F80D8 /* Default.png */; };
 		AFD4C4721656004F005F80D8 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFD4C46F1656004F005F80D8 /* Default@2x.png */; };

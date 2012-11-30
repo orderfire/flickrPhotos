@@ -16,9 +16,9 @@
                                                                     PhotoViewerViewControllerDelegate,
                                                                     SyncManagerDelegate>
 
-@property (strong, nonatomic) NSMutableArray * items;
-@property (strong, nonatomic) NSMutableArray * sectionTitles;
-@property (strong, nonatomic) IBOutlet UIImageView *backgroundImage;
+@property (nonatomic, retain) NSMutableArray * items;
+@property (nonatomic, retain) NSMutableArray * sectionTitles;
+@property (nonatomic, retain) IBOutlet UIImageView *backgroundImage;
 
 - (void)     resetCollectionGridViewer;
 - (BOOL)     loadImagesFromSyncManager;
