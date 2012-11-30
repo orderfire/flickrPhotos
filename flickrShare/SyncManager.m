@@ -221,7 +221,7 @@ static SyncManager *sharedInstance = nil;
 
 
 -(BOOL) moveImageFromTempToDocumentsDirectory:(NSString*) filename SubDirectory:(NSString*) subdirectory  {
-    NSError* error;
+    NSError* error = nil;
     NSFileManager* fileMgr = [NSFileManager defaultManager];
     NSString *docsFilePath;
     NSString *tempFilePath;
@@ -240,7 +240,7 @@ static SyncManager *sharedInstance = nil;
             [fileMgr copyItemAtPath:tempFilePath toPath:docsFilePath error:&error];
             [fileMgr removeItemAtPath:tempFilePath error:&error];
             if (error)  {
-                NSLog(@"Error occured during file move: %@\n     From: %@\n     To: %@", error.description,tempFilePath, docsFilePath);
+            //    NSLog(@"Error occured during file move: %@\n     From: %@\n     To: %@", error.description,tempFilePath, docsFilePath);
             }
             else    {
                 [fileMgr removeItemAtPath:tempFilePath error:&error];

@@ -17,9 +17,6 @@
 @property (nonatomic, assign) NSObject<DataManagerDelegate> *delegate;
 
 + (id)sharedInstance;
-- (BOOL) saveToPlist: (NSMutableArray*) saveArray Filename: (NSString*) fileName Path: filePath Overwrite: (BOOL) overwrite;
-- (NSMutableArray* )loadFromPlist: (NSString*) fileName Path: (NSString*) filePath FromBundle:(BOOL) bundle;
-
 - (NSString*) getDocumentsDirectory;
 - (NSString*) getHDImageSubDirectory;
 - (NSString*) getFullHDImageDirectory;
